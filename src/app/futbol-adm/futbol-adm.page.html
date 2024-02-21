@@ -29,7 +29,7 @@
 
  <ion-button *ngFor="let torneo of torneos" (click)="obtenerNombre(torneo.nombreTorneo)" routerLink="/levels-tournaments-fut-adm" color="success" name="nombreTorneo"  [(ngModel)]="nombreTorneo"  class="torneo" shape="round" >
    <div class="torneos_one"><div class="txt" id="nombreTor">{{torneo.nombreTorneo}}</div><div class="txt" id="fecha">Empieza el {{torneo.fechaInicio}}</div>
-   <ion-button color="danger"  shape="round"  routerlink="/home-adm" class="delete"><ion-icon size="large" name="trash-outline"></ion-icon></ion-button>
+
   </div>
 
 </ion-button>

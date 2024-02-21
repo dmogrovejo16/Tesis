@@ -46,7 +46,7 @@
 .tarjets {
 
   display: flex;
-  margin-top: -20%;
+  margin-top: -10%;
   padding-top: 7rem;
   padding-bottom: 2rem;
   align-items: center;
@@ -89,7 +89,10 @@
   left: -17%;
 }
 
-
+.xd{
+  display: flex;
+  justify-content: center;
+}
 .logo {
 
   position: relative;
@@ -230,7 +233,8 @@ ion-content {
 
 .bienv{
   font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  color: white;
 }
 
 .ellipse-4 {
@@ -246,7 +250,11 @@ ion-content {
   position: absolute;
 
 }
+.prof {
 
+  background-color: #0485ca;
+
+}
 .ellipse-5 {
 
   background: #0b64ac4d;

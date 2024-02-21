@@ -38,6 +38,7 @@ z-index: -1;
     rotate: 90deg;
 }
 
+
 .login-container {
     color: #ffffff;
     width: 90%;
@@ -155,3 +156,9 @@ display: flex;
     
     color: black; /* Texto en color negro */
   }
+
+  .login-container{
+    display: flex;
+    justify-content: center;
+  }
+  

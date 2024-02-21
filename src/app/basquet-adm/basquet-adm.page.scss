@@ -32,7 +32,6 @@
     border-radius: 100%;
     background-color:  rgb(230, 143, 62);
     position: absolute;
-    left: -1.7rem;
     top: -7rem;
     z-index: -1;
     
@@ -49,7 +48,6 @@ ion-content{
     border-radius: 100%;
     background-color:  rgba(236, 132, 34, 0.63);
     position: absolute;
-    left: -3rem;
     top: -7rem;
     z-index: -2;
 }
@@ -60,7 +58,7 @@ ion-content{
     border-radius: 100%;
     background-color:  rgba(230, 143, 62, 0.267);
     position: absolute;
-    left:-4.5rem;
+
     top: -8rem;
     z-index: -3;
 }
@@ -71,7 +69,11 @@ ion-content{
     left: 10rem;
 
 }
-
+.cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .dos{
     margin-top: -11%;
     top: 37rem;
@@ -131,7 +133,7 @@ align-items: center;
 }
 
 .tour{
-    margin-top: 5rem;
+    margin-top: 7rem;
     width: 100%;
     display: flex;
     align-items: center;

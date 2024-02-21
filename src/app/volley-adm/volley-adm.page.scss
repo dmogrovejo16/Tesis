@@ -11,7 +11,11 @@
     justify-content: center;
 
 }
-
+.cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .topp{
     text-align: center;
     width: 70%;
@@ -41,7 +45,6 @@
     border-radius: 100%;
     background-color: #f04141;
     position: absolute;
-    left: -1.7rem;
     top: -7rem;
     z-index: -1;
     
@@ -58,7 +61,6 @@ ion-content{
     border-radius: 100%;
     background-color: #f04141a6;
     position: absolute;
-    left: -3rem;
     top: -7rem;
     z-index: -2;
 }
@@ -69,7 +71,6 @@ ion-content{
     border-radius: 100%;
     background-color: #f0414160;
     position: absolute;
-    left:-4.5rem;
     top: -8rem;
     z-index: -3;
 }
@@ -123,7 +124,7 @@ align-items: center;
 
 .tour{
     width: 100%;
-    margin-top: 5rem;
+    margin-top: 7rem;
     display: flex;
     align-items: center;
     justify-content: center;

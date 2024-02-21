@@ -11,11 +11,11 @@ import { ApiService } from '../api.service';
 export class FutbolEstPage implements OnInit {
   torneos: any[] = [];
   nombreTorneo: any ;
-
   isButton1Disabled: boolean = false;
   isButton2Disabled: boolean = true;
   isButton3Disabled: boolean = true;
   state: string = "";
+  nombreT: any;
   constructor(private http: HttpClient, public _apiService: ApiService) { }
 
   ngOnInit() {
@@ -27,12 +27,9 @@ export class FutbolEstPage implements OnInit {
             console.log("ERROR ===", error);
           })
   }
-  onButtonClick() {
-    if (this.state="") {
-      this.isButton1Disabled = true; 
-    } else {
-      this.isButton1Disabled = false; 
-    }
+  onButtonClick(nombreT:any) {
+    this.nombreTorneo=this.nombreT;
+  localStorage.setItem("NombreTorneo", this.nombreTorneo);
 
 
     this.nombreTorneo = document.getElementById("nombreTor");

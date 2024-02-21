@@ -7,14 +7,14 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   <div class="nametour">
-    <ion-button routerLink="/levels-tournaments-voll-adm" slot="start" color="success" class="torneo" shape="round"> <ion-icon size="large" name="arrow-back-outline"></ion-icon></ion-button>
+    <ion-button routerLink="/levels-tournaments-voll-adm" slot="start" color="danger" class="torneo" shape="round"> <ion-icon size="large" name="arrow-back-outline"></ion-icon></ion-button>
   <h2 class="torname">{{nombreTorneo}}</h2>
 </div>
 <ion-list  [inset]="true" lines="inset">
   <ion-item *ngFor="let partido of partidos"   >
     <ion-grid >
       <ion-row class="ion-align-items-center" >
-        <ion-col  size="3" class="ion-text-center" >
+        <ion-col  size="3" >
           <ion-badge color="warning">{{partido.etapa}}</ion-badge>
           
         </ion-col>
@@ -33,7 +33,7 @@
           <!-- Resultado final -->
           <h2 class="name">{{partido.resultEq1}} - {{partido.resultEq2}}</h2>
         </ion-col>
-        <ion-col style="display: flex; text-align: center;" size="4">
+        <ion-col class="ion-right" size="4">
           <!-- Nombre del equipo visitante -->
           <h2 class="name second">{{partido.equipo2}}</h2>
         </ion-col>
@@ -56,7 +56,7 @@
 </ion-list>
 <div class="add">
   <ion-fab>
-    <ion-fab-button color="success" routerLink="/create-volley-match-adm" >
+    <ion-fab-button color="danger" routerLink="/create-volley-match-adm" >
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

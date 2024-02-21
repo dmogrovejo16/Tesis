@@ -4,34 +4,38 @@
   
 }
 
-.torname{
-    font-size: 2rem;
-
-}
-
 .torneo{
     width: 5rem;
-align-self: flex-start;
-  margin-top: 1rem;
-  margin-left: 1rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    align-self: flex-start;
+    left: 0.7rem;
+    top: 0.8rem;
     padding: 0;
 }
 
-.name{
-    font-size: 1rem;
-    margin-left: 1.5rem;
+
+.nametour{
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+.torname{
+    font-size: 2rem;
+ 
 }
 
 ion-content{
     --ion-background-color:rgba(125, 228, 93, 0.418);
 }
 
-.nametour{
-    width: 100%;
+.name{
+    font-size: 1rem;
+    margin-left: 1.5rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-
 }

@@ -103,10 +103,6 @@
 
 }
 
-.imag{
- width: 70%;
- margin-right: 0.5rem;
-}
 
 .number{
     align-self: center;
@@ -117,9 +113,18 @@
     justify-content: center;
     align-items: center;
 }
-
+.imag{
+    width: auto;
+    height: 75%;
+    margin-right: 0.5rem;
+}
+.img{
+    width: auto;
+    height: 92%;
+}
 .imagen{
-    width: 75%;
+    width: auto;
+    height: 75%;
 }
 
 .one{

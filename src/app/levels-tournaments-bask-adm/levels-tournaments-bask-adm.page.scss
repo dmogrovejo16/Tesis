@@ -105,8 +105,9 @@
 }
 
 .imag{
- width: 70%;
- margin-right: 0.5rem;
+    width: auto;
+    height: 75%;
+    margin-right: 0.5rem;
 }
 
 .number{
@@ -119,8 +120,13 @@
     align-items: center;
 }
 
+.img{
+    width: auto;
+    height: 92%;
+}
 .imagen{
-    width: 75%;
+    width: auto;
+    height: 75%;
 }
 
 .one{

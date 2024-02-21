@@ -23,7 +23,7 @@ nombreTorneo:any;
 
   ngOnInit() {
 
-    this.nombreTorneo=localStorage.getItem("NombreTorneo")?.toUpperCase();
+    this.nombreTorneo=localStorage.getItem("NombreTorneo");
 console.log(this.nombreTorneo);
     this._apiService.getMatchesFirst().subscribe((res:any)=>{
       console.log(res);

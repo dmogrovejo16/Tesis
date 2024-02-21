@@ -49,6 +49,7 @@
    margin-bottom: 1rem;
    display: flex;
    text-align:center;
+   
 }
 
 .txt{
@@ -104,7 +105,8 @@
 }
 
 .imag{
- width: 70%;
+ width: auto;
+ height: 75%;
  margin-right: 0.5rem;
 }
 
@@ -119,9 +121,15 @@
 }
 
 .imagen{
-    width: 75%;
+    width: auto;
+    height: 75%;
 }
 
+
+.img{
+    width: auto;
+    height: 92%;
+}
 .one{
     background-color: #ff6551;
 }

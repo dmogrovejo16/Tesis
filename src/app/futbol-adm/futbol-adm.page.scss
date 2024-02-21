@@ -6,7 +6,11 @@
     z-index: 0;
 
 }
-
+.cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .txt{
     display: flex;
     justify-content: center;
@@ -27,7 +31,6 @@
     border-radius: 100%;
     background-color:  rgb(125, 228, 93);
     position: absolute;
-    left: -1.7rem;
     top: -7rem;
     z-index: -1;
     
@@ -44,7 +47,6 @@ ion-content{
     border-radius: 100%;
     background-color:  rgba(125, 228, 93, 0.726);
     position: absolute;
-    left: -3rem;
     top: -7rem;
     z-index: -2;
 }
@@ -55,7 +57,6 @@ ion-content{
     border-radius: 100%;
     background-color:  rgba(125, 228, 93, 0.493);
     position: absolute;
-    left:-4.5rem;
     top: -8rem;
     z-index: -3;
 }
@@ -129,7 +130,7 @@ z-index: 1;
 }
 
 .tour{
-    margin-top: 5rem;
+    margin-top: 7rem;
     display: flex;
     width: 100%;
     align-items: center;

@@ -19,7 +19,10 @@
     height: 7%;
     justify-content: space-between;
 }
-
+.img{
+    width: auto;
+    height: 92%;
+}
 .back{
     width: 2.5rem;
     height: 2.5rem;
@@ -104,8 +107,9 @@
 }
 
 .imag{
- width: 70%;
- margin-right: 0.5rem;
+    width: auto;
+    height: 75%;
+    margin-right: 0.5rem;
 }
 
 .number{
@@ -119,7 +123,8 @@
 }
 
 .imagen{
-    width: 75%;
+    width: auto;
+    height: 75%;
 }
 
 .one{

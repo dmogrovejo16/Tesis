@@ -47,7 +47,7 @@ export class InputAreaAdmPage implements OnInit {
     if(this.area!=null){
     this._apiService.areaAdministrator(data).subscribe((res:any)=>{
       this.presentToastGood('Registro exitoso');
-      this.router.navigate(['/home-est']);
+      this.router.navigate(['/home-adm']);
       localStorage.setItem("area", this.area);
 
   

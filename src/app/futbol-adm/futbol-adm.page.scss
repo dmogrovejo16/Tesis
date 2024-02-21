@@ -1,0 +1,142 @@
+.torneo{
+    width: 80%;
+    height: 7rem;
+    border-radius: 2rem;
+    font-family: 'Poppins', sans-serif;
+    z-index: 0;
+
+}
+
+.txt{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#fecha{
+    opacity: 0.5;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+}
+
+
+.circle{
+    width: 28rem;
+    height: 29rem;
+    border-radius: 100%;
+    background-color:  rgb(125, 228, 93);
+    position: absolute;
+    left: -1.7rem;
+    top: -7rem;
+    z-index: -1;
+    
+}
+
+
+ion-content{
+    --ion-background-color:rgba(255, 255, 255, 0.253);
+}
+
+.circle1{
+    width: 31rem;
+    height: 31rem;
+    border-radius: 100%;
+    background-color:  rgba(125, 228, 93, 0.726);
+    position: absolute;
+    left: -3rem;
+    top: -7rem;
+    z-index: -2;
+}
+
+.circle2{
+    width: 34rem;
+    height: 34rem;
+    border-radius: 100%;
+    background-color:  rgba(125, 228, 93, 0.493);
+    position: absolute;
+    left:-4.5rem;
+    top: -8rem;
+    z-index: -3;
+}
+
+.back{
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    border-radius: 100%;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.btnback{
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    background-color: #10dc6200;
+}
+
+.uno{
+margin-top: -3rem;
+    top: 28rem;
+    left: 10rem;
+
+}
+
+.dos{
+    margin-top: -3rem;
+    top: 37rem;
+    left: 10rem;
+    border-radius: 100%;
+}
+
+.tres{
+    margin-top: -3rem;
+    top: 46rem;
+    left: 10rem;
+    border-radius: 100%;
+}
+
+.topp{
+text-align: center;
+width: 70%;
+
+}
+
+.title{
+
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+
+}
+
+.container{
+    display: flex;
+
+align-items: center;
+    flex-direction: column;
+    width: 99%;
+}
+
+.imagen{
+    width: 15rem;
+    margin-bottom: 1rem;
+}
+
+.delete{
+z-index: 1;
+}
+
+.tour{
+    margin-top: 5rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+#fecha{
+    opacity: 0.7;
+}

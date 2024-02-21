@@ -1,0 +1,157 @@
+
+
+.txt{
+  font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: #0485ca;
+}
+
+.back{
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  border-radius: 100%;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.or{
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ion-content.page{
+    --background:  #fff;
+
+}
+
+.login-container {
+  font-family: "Poppins", sans-serif;
+    color: #ffffff;
+    width: 90%;
+    margin-top: 0.5rem;
+    margin-left: 5%;
+   border-radius: 3rem;
+display: flex;
+
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #0485ca;
+   
+  }
+
+  
+#fecha{
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  background-color: #ffffff00;
+  border: 1px solid #ffffff;
+  border-radius: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 16rem;
+  height: 3rem;
+}
+
+#etaplab{
+  font-family: "Poppins", sans-serif;
+  padding-left: 1rem;
+  color: #ffffff;
+    background-color: #ffffff00;
+    border: 1px solid #ffffff;
+    border-radius: 2rem;
+    width: 19rem;
+    height: 3rem;
+}
+
+#hourIn{
+  color: #ffffff;
+  background-color: #ffffff00;
+  border: 1px solid #ffffff;
+  border-radius: 2rem;
+  width: 16rem;
+  height: 3rem;
+}
+
+.gradeOp{
+color: #000000;
+}
+
+
+#colores{
+  color: #ffffff;
+  background-color: #ffffff00;
+  border: 1px solid #ffffff;
+  border-radius: 2rem;
+  width: 6rem;
+  height: 3rem;
+}
+ 
+  .text{
+   
+    font-size: 1.2rem;
+    font-family: "Poppins", sans-serif;
+  }
+  .login-container h2 {
+    margin-bottom: 20px;
+  }
+  .login-container label, .login-container input {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .login-container input[type="text"], .login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+  }
+ 
+.imagenp{
+  margin: 1rem;
+  width: 23.5rem;
+}
+
+  .inc{
+    background-color: #f0d641;
+    color: #000000;
+    font-size: 1rem;
+    border: none;
+    border-radius: 1rem;
+    margin-left: 4rem;
+    margin-top: 1.8rem;
+    padding: 10px 20px;
+    width: 10rem;
+    height: 3rem;
+    cursor: pointer;
+  }
+
+  .reg{
+    background-color: #ff1f1f;
+    color: #000000;
+    font-size: 1rem;
+    border: none;
+    border-radius: 1rem;
+    margin-left: 5rem;
+    margin-top: 1rem;
+    padding: 10px 20px;
+    width: 8rem;
+    height: 3rem;
+    cursor: pointer;
+  }
+
+  .login-container input[type="text"], .login-container input[type="password"] {
+    
+    color: black; /* Texto en color negro */
+  }

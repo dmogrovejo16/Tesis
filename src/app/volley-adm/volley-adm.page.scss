@@ -1,0 +1,136 @@
+.torneo{
+    width: 80%;
+    height: 7rem;
+    border-radius: 2rem;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.txt{
+    display: flex;
+    justify-content: center;
+
+}
+
+.topp{
+    text-align: center;
+    width: 70%;
+
+    }
+    
+
+.back{
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    border-radius: 100%;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.btnback{
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    background-color: #10dc6200;
+}
+
+.circle{
+    width: 28rem;
+    height: 29rem;
+    border-radius: 100%;
+    background-color: #f04141;
+    position: absolute;
+    left: -1.7rem;
+    top: -7rem;
+    z-index: -1;
+    
+}
+
+
+ion-content{
+    --ion-background-color:rgba(255, 255, 255, 0.253);
+}
+
+.circle1{
+    width: 31rem;
+    height: 31rem;
+    border-radius: 100%;
+    background-color: #f04141a6;
+    position: absolute;
+    left: -3rem;
+    top: -7rem;
+    z-index: -2;
+}
+
+.circle2{
+    width: 34rem;
+    height: 34rem;
+    border-radius: 100%;
+    background-color: #f0414160;
+    position: absolute;
+    left:-4.5rem;
+    top: -8rem;
+    z-index: -3;
+}
+
+.uno{
+    margin-top: -11%;
+    top: 28rem;
+    left: 10rem;
+
+}
+
+.dos{
+    margin-top: -11%;
+    top: 37rem;
+    left: 10rem;
+    border-radius: 100%;
+}
+
+.tres{
+    margin-top: -11%;
+    top: 46rem;
+    left: 10rem;
+    border-radius: 100%;
+}
+
+.title{
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: white;
+
+}
+
+.container{
+    display: flex;
+
+align-items: center;
+    flex-direction: column;
+    width: 99%;
+}
+
+.topp{
+    text-align: center;
+    width: 70%;
+
+    }
+
+.imagen{
+    width: 15rem;
+    margin-bottom: 1rem;
+}
+
+.tour{
+    width: 100%;
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#fecha{
+    opacity: 0.7;
+}

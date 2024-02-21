@@ -1,0 +1,264 @@
+.sports {
+
+  border-radius: 1rem;
+  width: 20.81rem;
+  height: 6.12rem;
+  position: relative;
+
+}
+
+.fut {
+
+  background: linear-gradient(90.02deg,
+
+      rgb(125, 228, 93) 0.009946207865141332%,
+
+      rgba(143, 207, 123, 0.658) 99.58200454711914%,
+
+      rgba(125, 228, 93, 0.397) 100%);
+
+}
+
+.bas {
+
+  background: linear-gradient(90.17deg,
+
+      rgb(230, 143, 62) 0.009946207865141332%,
+
+      rgba(230, 143, 62, 0.651) 99.58200454711914%,
+
+      rgba(230, 143, 62, 0.295) 100%);
+
+}
+
+.voll {
+
+  background: linear-gradient(90.15deg,
+
+      #f04141 0.009946207865141332%,
+
+      #f04141ab 99.98999834060669%,
+
+      #f0414150 100%);
+
+}
+
+.tarjets {
+
+  display: flex;
+  margin-top: -20%;
+  padding-top: 7rem;
+  padding-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+
+}
+
+.txt {
+
+  font: 700 24px "Roboto", sans-serif;
+  color: #ffffff;
+  margin: 0.5rem;
+
+}
+
+.btn {
+
+  width: 83%;
+  border-radius: 1rem;
+
+}
+
+.see {
+
+  font: "Roboto", sans-serif;
+  height: 1rem;
+
+}
+
+.infor{
+  width: 80%;
+  height: 30%;
+  text-align: center;
+  color: white;
+  z-index: 4;
+  position:relative;
+  margin-top: 12rem;
+  left: -17%;
+}
+
+
+.logo {
+
+  position: relative;
+  width: 45%;
+  bottom: -1%;
+  z-index: 1;
+  left: 32%;
+
+}
+
+.soc {
+
+  width: 7rem;
+
+}
+
+.basq {
+
+  width: 6rem;
+
+}
+
+.sports {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 7rem;
+  box-shadow: 0px 1rem 1.5rem 0px rgba(0, 0, 0, 0.16);
+
+}
+
+.prof {
+
+  position: relative;
+  top: 2%;
+  left: 2%;
+  z-index: 4;
+
+}
+
+.text {
+
+  top: 10rem;
+  background-color: #2e54d300;
+  height: 15rem;
+  padding-top: 1rem;
+  border-radius: 1.5rem;
+  width: 20rem;
+
+}
+
+
+.pres {
+
+  font-family: 'Poppins', sans-serif;
+  color: rgb(245, 245, 245);
+  background-color: #f88a30;
+  z-index: 4;
+  font-size: 1.4rem;
+  align-self: center;
+  line-height: 2rem;
+  margin-left: 0.5rem;
+  border-radius: 1rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 20rem;
+  margin-top: 1.5rem;
+
+}
+
+.header2 {
+
+  position: relative;
+  height: 20rem;
+  width: 100%;
+  top: -10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  z-index: 1;
+
+}
+
+ion-content {
+  --ion-background-color: #0485ca;
+}
+
+
+
+.ellipse-1 {
+
+  background: url('https://i0.wp.com/uets.edu.ec/wp-content/uploads/2022/06/Captura-de-Pantalla-2022-06-14-a-las-9.32.26-p.-m..png?fit=1656%2C914&ssl=1') center/cover no-repeat;
+  border-radius: 50%;
+  opacity: 0.6;
+  width: 29.37rem;
+  height: 29.37rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.ellipse-2 {
+
+  background: #0b64ac70;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 0%;
+  border-radius: 50%;
+  z-index: -1;
+  width: 29.37rem;
+  height: 29.37rem;
+  position: absolute;
+
+}
+
+.ellipse-3 {
+
+  background: #0b64ac;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -2;
+  width: 32rem;
+  height: 32rem;
+  position: absolute;
+
+}
+
+.bienv{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+}
+
+.ellipse-4 {
+
+  background: #0b64ac8c;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -3;
+  width: 35rem;
+  height: 35rem;
+  position: absolute;
+
+}
+
+.ellipse-5 {
+
+  background: #0b64ac4d;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -3;
+  width: 38rem;
+  height: 38rem;
+  position: absolute;
+
+}
+  
+  

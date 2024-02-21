@@ -1,0 +1,44 @@
+.date{
+    font-size: 0.8rem;
+    opacity: 0.8;
+  
+}
+
+.torneo{
+    width: 5rem;
+    align-self: flex-start;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    padding: 0;
+}
+
+.torname{
+    font-size: 2rem;
+
+}
+
+.fila{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+ion-content{
+    --ion-background-color:#ee313177;
+}
+
+.name{
+    font-size: 1rem;
+    margin-left: 1.5rem;
+}
+
+.nametour{
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}

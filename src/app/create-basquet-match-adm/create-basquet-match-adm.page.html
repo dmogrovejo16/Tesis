@@ -1,0 +1,81 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+<ion-content class="page">
+  <div class="txt">
+    <p >Crea un partido de Basketball</p>
+   </div> 
+<div class="img">
+  <img class="imagenp" src="https://cdni.iconscout.com/illustration/premium/thumb/basketball-match-8933308-7269573.png?f=webp" alt="">
+</div>
+  <div class="login-container">
+
+    
+    <form action="" class="form" method="post">
+     
+  <hr>
+  <label class="text"  for="eq1">Equipo #1:</label>
+  <select  name="equipo1" [(ngModel)]="equipo1" id="colores" name="color">
+    <option *ngFor="let color of filteredColors" [value]="color" value="1E1" class="gradeOp" >{{ color }}</option>
+    
+  </select>
+<hr>
+<label class="text"  for="eq2">Equipo #2:</label>
+<select  name="equipo2" [(ngModel)]="equipo2" id="colores" name="color">
+  <option *ngFor="let color of filteredColors" [value]="color" value="1E1" class="gradeOp" >{{ color }}</option>
+  
+
+</select>
+      <hr>
+      <label class="text" id="etap"  for="etape">Etapa:</label>
+      <select id="etaplab" name="etapa" [(ngModel)]="etapa">
+        <option class="etape"  disabled selected>Selecciona una etapa del torneo:</option>
+        <option value="Final"  class="gradeOp" >Final</option>
+        <option value="Semifinal" class="gradeOp" >Semifinal</option>
+        <option value="Cuartos de Final" class="gradeOp">Cuartos de final</option>
+        <option value="Octavos de final"  class="gradeOp">Octavos de final</option>
+        <option value="Fase de Grupos" class="gradeOp">Fase de grupos</option>
+      </select>
+      
+      <hr>
+  
+      <hr>
+
+      <label class="text"  for="fech">Fecha:</label>
+      <input type="date" id="fecha" name="fecha" [(ngModel)]="fecha"  required>
+      <hr>
+      <label class="text"  for="hora">Hora de inicio:</label>
+      <input type="time" id="hourIn" [(ngModel)]="hora" name="hour" required>
+
+      <hr>
+      <label class="text"  for="hora">Disciplina:</label>
+      <select id="etaplab" name="dis" [(ngModel)]="disciplina">
+        <option disabled >Seleccionar:</option>
+        <option value="Futbol" class="gradeOp" selected>Futbol</option>
+        <option value="Basquetball"  class="gradeOp" >Basquetball</option>
+        <option value="Volleyball"  class="gradeOp">Volleyball</option>
+      </select>
+
+      <hr>
+
+      <input class="inc" (click)="crearPartido()" type="submit" value="Crear Partido">
+        <input routerLink="/basquet-matches-adm" class="reg" type="submit" value="Cancelar">
+
+
+
+    </form>
+
+
+  </div>
+
+
+
+</ion-content>

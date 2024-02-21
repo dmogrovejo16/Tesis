@@ -1,0 +1,46 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+<ion-content class="page">
+  <div class="txt">
+    <p >Crea un nuevo torneo de Basketball</p>
+   </div> 
+<div class="img">
+  <img class="imagen" src="https://cdn0.iconfinder.com/data/icons/tokyo-olympics-2021/1080/Basketball-512.png" alt="">
+</div>
+  <div class="login-container">
+
+    
+    <form action="" class="form" method="post">
+      <label class="text" for="torname">Nombre del Torneo:</label>
+      <input type="text" id="torname" name="torneoName" required>
+      <hr>
+      <label class="text"  for="fechIn">Fecha de inicio:</label>
+      <input type="date" id="fechaInicio" name="fechIn" required>
+      <hr>
+      <label class="text"  for="password">Fecha de finzalización:</label>
+      <input type="date" id="fechaFinalizacion" name="fechFin" required>
+      
+      <hr>
+      <input class="inc" type="submit" (click)="addTournament()" value="Crear Torneo">
+      <input routerLink="/basquet-adm" class="reg" type="submit" value="Cancelar">
+      
+
+
+
+    </form>
+
+
+  </div>
+
+
+
+</ion-content>

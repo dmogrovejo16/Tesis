@@ -1,0 +1,54 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet"> 
+
+
+
+<ion-content>
+<div class="section">
+  <h2 class="one">Login</h2> <h2 class="appname">Inicia sesion con tu cuenta</h2>
+</div>
+<div class="container">
+  <div class="name">
+<h2 class="title">Edusports</h2>
+<h3 class="subtitle">Los torneos en tu mano</h3>
+
+  </div>
+
+<div class="formulario">
+
+<form action="">
+
+
+<ion-input type="email" name="user" [(ngModel)]="email" class="input" placeholder="Correo electrónico"></ion-input>
+<hr>
+<ion-input type="password" name="pass" [(ngModel)]="password" class="input" placeholder="Contraseña"></ion-input>
+<hr>
+<hr>
+<button class="submit" (click)="iniciarSesion()">
+  <p class="send">Login</p>
+</button>
+
+</form>
+
+<p class="or">¿No tienes una cuenta?</p>
+<hr>
+<button class="submit" routerLink="/signup">
+  <p class="send">Registrarse</p>
+</button>
+
+</div>
+
+</div>
+
+</ion-content>

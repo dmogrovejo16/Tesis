@@ -1,0 +1,39 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+<ion-content>
+<div class="top">
+
+
+<h2 class="name">¿El partido ya acabó?</h2>
+<h2 class="name2">Ingresa el resultado para darlo a conocer</h2>
+
+</div>
+<div class="bottom">
+  
+  
+
+  <ion-list class="list">
+    <ion-item class="items">
+      <ion-label class="lab">Resultado {{Eq1}}</ion-label>
+      <ion-label class="data"><input class="result" name="Eq1" [(ngModel)]="resEq1" type="number" max="10" min="0"></ion-label>
+    </ion-item>
+    <ion-item class="items">
+      <ion-label class="lab">Resultado {{Eq2}}</ion-label>
+      <ion-label class="data"><input class="result"  name="Eq2" [(ngModel)]="resEq2" type="number" max="10" min="0"></ion-label>
+    </ion-item>
+  </ion-list>
+<ion-button shape="round" class="logout" (click)="resultMatch()" color="success"> Aceptar<ion-icon size="large" name="checkmark-circle-outline"></ion-icon></ion-button>
+<ion-button routerLink="/volley-matches-adm" shape="round" class="infor" color="danger"> Cancelar <ion-icon size="large" name="close-circle-outline"></ion-icon></ion-button>
+
+
+
+
+
+</div>
+
+</ion-content>

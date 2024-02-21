@@ -1,0 +1,61 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet"> 
+
+
+
+<ion-content>
+  <div class="section">
+    <h2 class="one">SignUp</h2> <h2 class="appname">Crea una nueva cuenta</h2>
+  </div>
+
+<div class="container">
+  <div class="name">
+<h2 class="title">Edusports</h2>
+<h3 class="subtitle">La app de torneos</h3>
+
+  </div>
+
+<div class="formulario">
+
+<form action="">
+
+
+<ion-input type="text" name="name" [(ngModel)]="name" class="input" placeholder="Nombre"></ion-input>
+<hr>
+<ion-input type="text" class="input"  [(ngModel)]="lastName" name="lastname" placeholder="Apellido"></ion-input>
+<hr>
+<ion-input type="email" class="input" [(ngModel)]="email"  name="email"  placeholder="Correo electrónico"></ion-input>
+<hr>
+<ion-input type="password" class="input"  [(ngModel)]="password" name="pass" placeholder="Nueva contraseña"></ion-input>
+<hr>
+
+<hr>
+<button class="submit" (click)="addStudent()">
+  <p class="send">Registrarse</p>
+</button>
+
+</form>
+
+<p class="or">¿Ya tienes una cuenta?</p>
+<hr>
+<button class="submit" routerLink="/login">
+  <p class="send">Login</p>
+</button>
+
+
+</div>
+
+</div>
+
+</ion-content>

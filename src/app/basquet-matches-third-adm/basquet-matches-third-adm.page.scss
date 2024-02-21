@@ -1,0 +1,47 @@
+.date{
+    font-size: 0.8rem;
+    opacity: 0.8;
+  
+}
+
+.torneo{
+    width: 5rem;
+    align-self: flex-start;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    padding: 0;
+}
+
+
+.add{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+margin-top: 2rem;
+    width: 100%;
+    height: 2rem;
+}
+
+.torname{
+    font-size: 2rem;
+
+}
+ion-content{
+    --ion-background-color:rgba(247, 150, 4, 0.253);
+}
+
+
+.name{
+    font-size: 1rem;
+    margin-left: 1.5rem;
+}
+
+.nametour{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}

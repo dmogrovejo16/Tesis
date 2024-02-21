@@ -1,0 +1,34 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet"> 
+
+
+<ion-content [fullscreen]="true">
+
+  <div class="container">
+
+    <div class="img">
+      <img src="https://pbs.twimg.com/profile_images/1059814290256023552/-f5_abr0_400x400.png" alt="logo tecniquito">
+    </div>
+  <div class="subtitle">
+    Solo una pregunta más
+  </div>
+  <div class="title">
+    ¿En que curso estás?
+  </div>
+<ion-input type="text" name="curso" [(ngModel)]="curso" placeholder="3E3" class="class"> </ion-input>
+
+<ion-button color="warning" shape="round" (click)="ingresarCurso()" class="btn">Continuar <ion-icon name="arrow-forward-circle-outline"></ion-icon></ion-button>
+
+</div>
+</ion-content>

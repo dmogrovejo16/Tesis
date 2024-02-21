@@ -1,0 +1,46 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
+
+<ion-content class="page">
+  <div class="txt">
+    <p >Crea un nuevo torneo de futbol</p>
+   </div> 
+<div class="img">
+  <img class="imagen" src="https://cdni.iconscout.com/illustration/premium/thumb/football-player-scoring-goal-4375047-3637340.png?f=webp" alt="">
+</div>
+  <div class="login-container">
+
+    
+    <form action="" class="form" method="post">
+      <label class="text"   >Nombre del Torneo:</label>
+      <input type="text" id="torname" placeholder="Crea un nombre único" [(ngModel)]="name"  name="torneoName" required>
+  <hr>
+      <label class="text"    >Fecha de inicio:</label>
+      <input type="date" id="fechaInicio"  [(ngModel)]="fechIni" name="fechIn" required>
+
+      <label class="text"  >Fecha de finzalización:</label>
+      <input type="date" id="fechaFinalizacion" [(ngModel)]="fechFin" name="fechFin" required>
+      <hr>
+  
+ 
+      <input class="inc" type="submit" (click)="addTournament()" value="Crear Torneo">
+        <input routerLink="/futbol-adm" class="reg" type="submit" value="Cancelar">
+
+       
+
+    </form>
+
+
+  </div>
+
+
+
+</ion-content>

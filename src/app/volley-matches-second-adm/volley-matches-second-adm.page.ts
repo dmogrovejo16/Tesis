@@ -21,9 +21,9 @@ export class VolleyMatchesSecondAdmPage implements OnInit {
   }
 
   ngOnInit() {
-    this.nombreTorneo=localStorage.getItem("NombreTorneo")?.toUpperCase();
+    this.nombreTorneo=localStorage.getItem("NombreTorneo");
 console.log(this.nombreTorneo);
-    this._apiService.getMatchesFirst().subscribe((res:any)=>{
+    this._apiService.getMatchesSecond().subscribe((res:any)=>{
       console.log(res);
       this.partidos = res.filter((partido: any) => partido.nombreTorneo == this.nombreTorneo && partido.disciplina == "Volley");
     },(error: any)=>{ 

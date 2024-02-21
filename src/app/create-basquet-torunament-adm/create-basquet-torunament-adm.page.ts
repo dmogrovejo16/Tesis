@@ -54,7 +54,7 @@ export class CreateBasquetTorunamentAdmPage implements OnInit {
           this.fechFin='';
           this.idAdmCreator='';
           alert('SUCCESS');
-          this.router.navigate(['/futbol-adm']);
+          this.router.navigate(['/basquet-adm']);
           this.presentToast('Torneo creado exitosamente');
       },(error: any)=>{ 
         console.log("ERROR ===", error);

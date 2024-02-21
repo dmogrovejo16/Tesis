@@ -20,7 +20,7 @@ export class BasquetMatchesThirdAdmPage implements OnInit {
 
   ngOnInit() {
 
-    this.nombreTorneo=localStorage.getItem("NombreTorneo")?.toUpperCase();
+    this.nombreTorneo=localStorage.getItem("NombreTorneo");
 
     this._apiService.getMatchesThird().subscribe((res:any)=>{
       console.log(res);

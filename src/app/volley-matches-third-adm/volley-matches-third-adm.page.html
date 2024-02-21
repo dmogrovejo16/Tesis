@@ -1,18 +1,22 @@
 <ion-content >
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
   <div class="nametour">
     <ion-button routerLink="/levels-tournaments-voll-adm" color="danger" class="torneo" shape="round"> <ion-icon size="large" name="arrow-back-outline"></ion-icon></ion-button>
     <h2 class="torname">Nombre del torneo</h2>
   </div>
   <ion-list  [inset]="true" lines="inset">
-    <ion-item>
+    <ion-item *ngFor="let partido of partidos" >
       <ion-grid>
         <ion-row class="ion-align-items-center">
           <ion-col  size="3" >
-            <ion-badge color="warning">Final</ion-badge>
+            <ion-badge color="warning">{{partido.etapa}}</ion-badge>
             
           </ion-col>
           <ion-col style="height: 1.5rem;" size="6" class="ion-text-center">
-            <p class="date">Fecha y Hora del Partido</p>
+            <p class="date">El {{partido.fechaPartido}} a las {{partido.horaPartido}}</p>
           </ion-col>
           
         </ion-row>
@@ -20,15 +24,15 @@
         <ion-row class="ion-align-items-center">
           <ion-col style="display: flex; text-align: center; align-items: center;" size="4">
             <!-- Nombre del equipo local -->
-            <h2 class="name princ">Nombre</h2>
+            <h2 class="name princ">{{partido.equipo1}}</h2>
           </ion-col>
           <ion-col style="display: flex; text-align: center;" size="4" class="ion-text-center">
             <!-- Resultado final -->
-            <h2 class="name">xxx - xxx</h2>
+            <h2 class="name">{{partido.resultEq1}} - {{partido.resultEq2}}</h2>
           </ion-col>
           <ion-col class="ion-right" size="4">
             <!-- Nombre del equipo visitante -->
-            <h2 class="name">Nombre 2</h2>
+            <h2 class="name">{{partido.equipo2}}</h2>
           </ion-col>
         </ion-row>
   

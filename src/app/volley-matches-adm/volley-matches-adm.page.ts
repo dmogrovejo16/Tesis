@@ -23,7 +23,7 @@ export class VolleyMatchesAdmPage implements OnInit {
   
     ngOnInit() {
   
-      this.nombreTorneo=localStorage.getItem("NombreTorneo")?.toUpperCase();
+      this.nombreTorneo=localStorage.getItem("NombreTorneo");
   
       this._apiService.getMatchesFirst().subscribe((res:any)=>{
         console.log(res);

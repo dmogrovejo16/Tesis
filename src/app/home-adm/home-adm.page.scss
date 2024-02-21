@@ -3,6 +3,7 @@
   border-radius: 1rem;
   width: 20.81rem;
   height: 6.12rem;
+  z-index: 2;
   position: relative;
 
 }
@@ -46,13 +47,13 @@
 .tarjets {
 
   display: flex;
+  z-index: 5;
   padding-top: 7rem;
   padding-bottom: 2rem;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 2rem;
-  margin-top: 5rem;
 
 }
 
@@ -103,7 +104,6 @@
 }
 
 .prof {
-
   background-color: #0485ca;
 
 }
@@ -145,8 +145,15 @@
   font-family: 'Poppins', sans-serif;
   font-size: 2rem;
   color: white;
+  z-index: 2;
+  text-align: center;
 }
 
+.xd{
+  display: flex;
+  width: 10%;
+  justify-content: center;
+}
 
 .pres {
   font-family: 'Poppins', sans-serif;
@@ -180,7 +187,7 @@
   justify-content: center;
   flex-wrap: nowrap;
   z-index: 1;
-
+margin-top: 5rem;
 }
 
 ion-content {
@@ -245,6 +252,11 @@ ion-content {
   height: 35rem;
   position: absolute;
 
+}
+
+.btnprof{
+  z-index: 1;
+  background-color: #0485ca;
 }
 
 .ellipse-5 {

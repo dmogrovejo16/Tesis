@@ -44,9 +44,9 @@
 }
 
 .tarjets {
-
+margin-top:-15rem ;
   display: flex;
-  margin-top: -10%;
+  margin-top: 2%;
   padding-top: 7rem;
   padding-bottom: 2rem;
   align-items: center;
@@ -91,6 +91,7 @@
 
 .xd{
   display: flex;
+  width: 10%;
   justify-content: center;
 }
 .logo {
@@ -115,6 +116,13 @@
 
 }
 
+.btnprof{
+  background-color: white;
+  position: relative;
+  top: 2%;
+  left: 2%;
+}
+
 .sports {
 
   display: flex;
@@ -127,12 +135,10 @@
 }
 
 .prof {
-
   position: relative;
   top: 2%;
   left: 2%;
-  z-index: 4;
-
+z-index: 4;
 }
 
 .text {
@@ -232,9 +238,11 @@ ion-content {
 }
 
 .bienv{
+  text-align: center;
   font-family: 'Poppins', sans-serif;
   font-size: 2rem;
   color: white;
+  z-index: 2;
 }
 
 .ellipse-4 {

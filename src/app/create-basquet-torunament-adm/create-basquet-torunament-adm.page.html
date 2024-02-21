@@ -21,13 +21,13 @@
     
     <form action="" class="form" method="post">
       <label class="text" for="torname">Nombre del Torneo:</label>
-      <input type="text" id="torname" name="torneoName" required>
+      <input type="text" id="torname"  [(ngModel)]="name"  name="torneoName"required>
       <hr>
       <label class="text"  for="fechIn">Fecha de inicio:</label>
-      <input type="date" id="fechaInicio" name="fechIn" required>
+      <input type="date" id="fechaInicio" [(ngModel)]="fechIni" name="fechIn" required>
       <hr>
       <label class="text"  for="password">Fecha de finzalización:</label>
-      <input type="date" id="fechaFinalizacion" name="fechFin" required>
+      <input type="date" id="fechaFinalizacion" [(ngModel)]="fechFin" name="fechFin" required>
       
       <hr>
       <input class="inc" type="submit" (click)="addTournament()" value="Crear Torneo">

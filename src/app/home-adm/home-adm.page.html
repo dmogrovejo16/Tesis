@@ -9,13 +9,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
 <ion-content class="cont" [fullscreen]="true"  style="border-radius: 2rem;">
-    <button routerLink="/profile-adm">  <ion-icon class="prof" size="large" color="bright" name="person-outline"></ion-icon> </button>
+    <button routerLink="/profile-adm" class="btnprof">  <ion-icon class="prof" size="large" color="bright" name="person-outline"></ion-icon> </button>
 
 
 
   
   <header class="header2">
-  
+    <div class="xd">
+      <p class="bienv">Bienvenido de nuevo, {{nombre}}</p>
+    </div>
     <div class="ellipse-1"></div>
     <div class="ellipse-2"></div>
     <div class="ellipse-3"></div>
@@ -25,9 +27,8 @@
   </header>
 
 <div class="tarjets">
-  <p class="bienv">Bienvenido de nuevo, {{nombre}}.</p>
   <div class="pres">
-    <p><b>¿Que quieres descubrir?</b></p>
+    <p>¿Que quieres descubrir?</p>
   </div>
   <button  routerLink="/futbol-adm"  class="btn">
     <div class="sports fut">

@@ -6,10 +6,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 <ion-content class="cont" [fullscreen]="true"  style="border-radius: 2rem;">
-  <button routerLink="/profile-est">  <ion-icon class="prof" color="light" size="large" name="person-circle-outline"></ion-icon></button>
+  <button routerLink="/profile-est" class="btnprof">  <ion-icon class="prof" color="" size="large" name="person-circle-outline"></ion-icon></button>
   
   <header class="header2">
-
+    <div class="xd">
+      <p class="bienv">Bienvenido de nuevo, {{nombre}}</p>
+    </div>
     <div class="ellipse-1"></div>
     <div class="ellipse-2"></div>
     <div class="ellipse-3"></div>
@@ -22,9 +24,7 @@
 
 
 <div class="tarjets">
-  <div class="xd">
-  <p class="bienv">Bienvenido de nuevo, {{nombre}}</p>
-</div>
+  
   <div class="pres">
     <p>¿Que quieres descubrir?</p>
   </div>

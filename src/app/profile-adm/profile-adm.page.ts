@@ -13,8 +13,8 @@ export class ProfileAdmPage implements OnInit {
   area:any;
   nombre: string = localStorage.getItem("Name")!;
   nombreCapitalizado: string = this.nombre.charAt(0).toUpperCase() + this.nombre.slice(1);
-  apellido: string = localStorage.getItem("Last Name")!;
-  apellidoCapitalizado: string = this.apellido.charAt(0).toUpperCase()  + this.apellido.slice(0, -1);
+  apellido: any = localStorage.getItem("Last Name")!;
+  apellidoCapitalizado:any= this.apellido;
   email: string| null = localStorage.getItem("Email");
 
   nombreCompleto:any;

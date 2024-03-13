@@ -24,7 +24,7 @@ export class LoginPage implements OnInit {
   email: string = '';
   hashedPassword: string= '';
 
-result:any;
+result:any[] | undefined;
 
   hashPassword(password: string): string {
     return CryptoJS.SHA512(password).toString();
@@ -34,16 +34,7 @@ result:any;
 
   
   ngOnInit() {
-  this.result=  this.http.get("phpapphosting.000.pe/getStudents.php");
 
-
-  fetch('http://phpapphosting.000.pe/getStudents.php')
-  .then(response => response.json())
-  .then(data => {
-    // Aquí `data` contendrá el array que obtuviste del servidor PHP
-    console.log(data);
-  })
-  .catch(error => console.error('Error:', error));
 }
 
   

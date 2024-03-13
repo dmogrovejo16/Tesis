@@ -1,5 +1,5 @@
 {
-    "/api": {
+    "/phpapphoting.000.pe": {
       "target": "http://phpapphosting.000.pe",
       "secure": false,
       "changeOrigin": true,

@@ -5,7 +5,7 @@
 
   <div class="nametour">
     <ion-button routerLink="/levels-tournaments-voll-adm" color="danger" class="torneo" shape="round"> <ion-icon size="large" name="arrow-back-outline"></ion-icon></ion-button>
-    <h2 class="torname">Nombre del torneo</h2>
+    <h2 class="torname">{{nombreTorneo}}</h2>
   </div>
   <ion-list  [inset]="true" lines="inset">
     <ion-item *ngFor="let partido of partidos" >

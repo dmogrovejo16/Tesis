@@ -23,9 +23,9 @@ export class VolleyMatchesThirdAdmPage implements OnInit {
     
     this.nombreTorneo=localStorage.getItem("NombreTorneo");
   console.log(this.nombreTorneo);
-      this._apiService.getMatchesSecond().subscribe((res:any)=>{
+      this._apiService.getMatchesThird().subscribe((res:any)=>{
         console.log(res);
-        this.partidos = res.filter((partido: any) => partido.nombreTorneo == this.nombreTorneo && partido.disciplina == "Volley");
+        this.partidos = res.filter((partido: any) => partido.nombreTorneo == this.nombreTorneo && partido.disciplina == "Volleyball");
       },(error: any)=>{ 
               console.log("ERROR ===", error);
             })

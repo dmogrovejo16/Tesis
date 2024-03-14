@@ -44,7 +44,7 @@ this.torneos=res;
   obtenerNombre(nombreT:any){
     this.nombreTorneo=nombreT;
     localStorage.setItem("NombreTorneo", this.nombreTorneo);
-
+console.log(this.nombreTorneo);
   }
   
 

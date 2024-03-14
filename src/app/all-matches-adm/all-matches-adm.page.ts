@@ -8,7 +8,8 @@ import { ApiService } from '../api.service';
 })
 export class AllMatchesAdmPage implements OnInit {
 
-
+color:any;
+col:any;
   nombreTorneo:any;
   id: any;
   Eq1: any;
@@ -28,6 +29,9 @@ export class AllMatchesAdmPage implements OnInit {
         },(error: any)=>{ 
             console.log("ERROR ===", error);
           })
+
+
+     
 
 
         }

@@ -1,7 +1,7 @@
 {
-    "/phpapphoting.000.pe": {
-      "target": "http://phpapphosting.000.pe",
-      "secure": false,
+    "phpapphosting.000.pe/": {
+      "target": "https://phpapphosting.000.pe",
+      "secure": true,
       "changeOrigin": true,
       "logLevel": "debug",
       "headers": {

@@ -1,67 +1,95 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-<ion-content class="cont" [fullscreen]="true"  style="border-radius: 2rem;">
-  
-  <header class="header2">
-    <div class="xd">
-      <p class="bienv">Bienvenido de nuevo, {{nombre}}</p>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+<ion-menu contentId="main-content" >
+  <ion-header >
+    <ion-toolbar >
+      <ion-title color="primary">Explorar</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding" color="light">
+
+    <ion-item routerLink="/all-futbol-matches-est" color="light">
+      <ion-icon name="football-outline" slot="start"></ion-icon>
+      <ion-label>Partidos de futbol</ion-label>
+    </ion-item>
+
+    <ion-item  color="light">
+      <ion-icon name="basketball-outline" slot="start"></ion-icon>
+            <ion-label>Partidos de basquetball</ion-label>
+    </ion-item>
+
+
+    <ion-item color="light">
+      <ion-icon name="tennisball-outline" slot="start"></ion-icon>
+            <ion-label>Partidos de volleyball</ion-label>
+    </ion-item>
+    <ion-item color="light">
+      <ion-icon name="medal-outline" slot="start"></ion-icon>
+            <ion-label>Todos los partidos</ion-label>
+    </ion-item>
+
+
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Edusports</ion-title>
+    <ion-buttons slot="end" >
+      <ion-icon size="large" routerLink="/profile-est" color="primary" name="person-circle-outline"></ion-icon>    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+<img class="back" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1f6a08c7-f817-4a1d-a096-bef5f82cfa6a/d65t4md-efdc2eb7-aa08-42aa-b786-a4b97b524c3d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzFmNmEwOGM3LWY4MTctNGExZC1hMDk2LWJlZjVmODJjZmE2YVwvZDY1dDRtZC1lZmRjMmViNy1hYTA4LTQyYWEtYjc4Ni1hNGI5N2I1MjRjM2QucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.4AjSDKvHux9NZjFmvoeh1BgHNscWeraXaCCkAn6tDRM" alt="">
+  <div class="cab">
+    <img class="logo" src="https://i0.wp.com/uets.edu.ec/wp-content/uploads/2019/07/Logo_UETS_Transparente.png?fit=185%2C182&ssl=1" alt="">
+
+    <div class="title">
+      Bienvenido de nuevo, {{nombre}}
     </div>
-    <div class="ellipse-1"></div>
-    <div class="ellipse-2"></div>
-    <div class="ellipse-3"></div>
-    <div class="ellipse-4"></div>
-    <div class="ellipse-5"></div>
-
-
-  </header>
-
-
-
-<div class="tarjets">
-  
-  <div class="pres">
-    <p>¿Que quieres descubrir?</p>
   </div>
-  <div class="line"></div>
-  <button class="btn">
-    <div class="sports fut">
-      <div class="inf">
-      <p class="txt">Futbol</p>
-      <ion-button class="see" shape="round" color="light" routerLink="/futbol-est">Ver
-     
-      </ion-button>
-    </div>
-      <img class="img soc" src="https://images.vexels.com/media/users/3/218209/isolated/preview/a9bcdf48616ebf316f79e12e19c8adb7-portero-del-jugador-de-ftbol.png" alt="">
 
-    </div>
-  </button>
-  <button class="btn">
-    <div class="sports bas">
-      <div class="inf">
-      <p class="txt">Basketball</p>
-      <ion-button class="see" shape="round" color="light" routerLink="/basquet-est">Ver</ion-button>
-    </div>
-      <img class="img basq" src="https://i.pinimg.com/originals/03/6c/50/036c508e25b8edf88d661bfaf9baebb2.png" alt="">
 
-    </div>
-  </button>
-  <button class="btn" >
-    <div class="sports voll">
-      <div class="inf">
-      <p class="txt">Volleyball</p>
-      <ion-button class="see" shape="round" color="light" routerLink="/volley-est">Ver</ion-button>
-    </div>
-      <img class="img basq" src="https://cdni.iconscout.com/illustration/premium/thumb/volleyball-player-smashing-6276984-5188095.png" alt="">
+  <div class="cards">
 
+  <div class="card" routerLink="/futbol-est" >
+    <button class="img-btn" >
+    <img src="https://www.tecnicodeportivo.net/wp-content/uploads/2023/05/Beneficios_jugar_futbol.jpg" alt="Imagen de ejemplo">
+  </button >
+    <div class="text">
+      <h2>Fútbol</h2>
+      <p>Ver torneos</p>
     </div>
-  </button>
+  </div>
+
+  <div class="card" routerLink="/basquet-est" >
+    <button class="img-btn" >
+    <img class="bas" src="https://th.bing.com/th/id/OIP.KSKXPlejsRuP8wNh8-bRQgHaFJ?rs=1&pid=ImgDetMain" alt="Imagen de ejemplo">
+  </button >
+    <div class="text">
+      <h2>Basquetball</h2>
+      <p>Ver torneos</p>
+    </div>
+  </div>
+
+  <div class="card" routerLink="/volley-est" >
+    <button class="img-btn" >
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Algeria_and_Japan_women%27s_national_volleyball_team_at_the_2012_Summer_Olympics_%287913959028%29.jpg" alt="Imagen de ejemplo">
+  </button >
+    <div class="text">
+      <h2>Volleyball</h2>
+      <p>Ver torneos</p>
+    </div>
+  </div>
 </div>
+</ion-content>
 
-<img class="back" src="" alt="">
- 
+
+</div>
 

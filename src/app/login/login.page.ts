@@ -34,7 +34,6 @@ result:any[] | undefined;
 
   
   ngOnInit() {
-
 }
 
   

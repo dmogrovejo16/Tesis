@@ -196,6 +196,38 @@ const routes: Routes = [
     path: 'input-area-adm',
     loadChildren: () => import('./input-area-adm/input-area-adm.module').then( m => m.InputAreaAdmPageModule)
   },
+  {
+    path: 'all-futbol-matches-adm',
+    loadChildren: () => import('./all-futbol-matches-adm/all-futbol-matches-adm.module').then( m => m.AllFutbolMatchesAdmPageModule)
+  },
+  {
+    path: 'all-futbol-matches-est',
+    loadChildren: () => import('./all-futbol-matches-est/all-futbol-matches-est.module').then( m => m.AllFutbolMatchesEstPageModule)
+  },
+  {
+    path: 'all-basquet-matches-est',
+    loadChildren: () => import('./all-basquet-matches-est/all-basquet-matches-est.module').then( m => m.AllBasquetMatchesEstPageModule)
+  },
+  {
+    path: 'all-basquet-matches-adm',
+    loadChildren: () => import('./all-basquet-matches-adm/all-basquet-matches-adm.module').then( m => m.AllBasquetMatchesAdmPageModule)
+  },
+  {
+    path: 'all-volley-matches-adm',
+    loadChildren: () => import('./all-volley-matches-adm/all-volley-matches-adm.module').then( m => m.AllVolleyMatchesAdmPageModule)
+  },
+  {
+    path: 'all-volley-matches-est',
+    loadChildren: () => import('./all-volley-matches-est/all-volley-matches-est.module').then( m => m.AllVolleyMatchesEstPageModule)
+  },
+  {
+    path: 'all-matches-est',
+    loadChildren: () => import('./all-matches-est/all-matches-est.module').then( m => m.AllMatchesEstPageModule)
+  },
+  {
+    path: 'all-matches-adm',
+    loadChildren: () => import('./all-matches-adm/all-matches-adm.module').then( m => m.AllMatchesAdmPageModule)
+  },
 
   
 ];

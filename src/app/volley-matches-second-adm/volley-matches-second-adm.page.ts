@@ -25,7 +25,7 @@ export class VolleyMatchesSecondAdmPage implements OnInit {
 console.log(this.nombreTorneo);
     this._apiService.getMatchesSecond().subscribe((res:any)=>{
       console.log(res);
-      this.partidos = res.filter((partido: any) => partido.nombreTorneo == this.nombreTorneo && partido.disciplina == "Volley");
+      this.partidos = res.filter((partido: any) => partido.nombreTorneo == this.nombreTorneo && partido.disciplina == "Volleyball");
     },(error: any)=>{ 
             console.log("ERROR ===", error);
           })

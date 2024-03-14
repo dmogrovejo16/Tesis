@@ -28,7 +28,7 @@ nombreTorneo:any;
 console.log(this.nombreTorneo);
     this._apiService.getMatchesFirst().subscribe((res:any)=>{
       console.log(res);
-      this.partidos = res.filter((partido: any) => partido.nombreTorneo == this.nombreTorneo && partido.disciplina == "Volley");
+      this.partidos = res.filter((partido: any) => partido.nombreTorneo == this.nombreTorneo && partido.disciplina == "Volleyball");
     },(error: any)=>{ 
             console.log("ERROR ===", error);
           })

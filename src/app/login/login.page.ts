@@ -41,6 +41,7 @@ result:any[] | undefined;
   iniciarSesion(){
   this.hashedPassword = this.hashPassword(this.password);
 
+  if(this.email!="" && this.password!=""){
    
     this._apiService.getStudents().subscribe((res:any)=>{
       console.log("SUCCESS ===", res);
@@ -97,7 +98,11 @@ result:any[] | undefined;
     })
 
   
+    }else{
+      this.presentToast("Rellene todos los campos porfavor");
     }
+  
+  }
 
     async presentToast(message: string) {
       const toast = await this.toastController.create({
@@ -130,9 +135,9 @@ result:any[] | undefined;
       toast.present();
     }
 
-  
+  }
 
-}
+
 function enviarDatos() {
   throw new Error('Function not implemented.');
 }

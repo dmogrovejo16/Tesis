@@ -228,6 +228,14 @@ const routes: Routes = [
     path: 'all-matches-adm',
     loadChildren: () => import('./all-matches-adm/all-matches-adm.module').then( m => m.AllMatchesAdmPageModule)
   },
+  {
+    path: 'news-adm',
+    loadChildren: () => import('./news-adm/news-adm.module').then( m => m.NewsAdmPageModule)
+  },
+  {
+    path: 'news-est',
+    loadChildren: () => import('./news-est/news-est.module').then( m => m.NewsEstPageModule)
+  },
 
   
 ];

@@ -1,0 +1,24 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-icon routerLink="/home-est" name="arrow-back-circle-outline" size="large"></ion-icon>
+    <ion-title>Noticias UETS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let video of posts" color="warning" (click)="openVideo(video.id.videoId)">
+    <ion-card-header class="header">
+      <img class="content" [src]="video.snippet.thumbnails.default.url" alt="Video Thumbnail">
+      <ion-card-title class="title">{{ video.snippet.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content >
+      <ion-thumbnail slot="start">
+      </ion-thumbnail>
+      <p>{{ video.snippet.description }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

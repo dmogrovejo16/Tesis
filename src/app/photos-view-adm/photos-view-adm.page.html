@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>photos-view-adm</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let image of fotos">
+    <img [src]="image.urlImg" alt="Imagen">
+    <ion-card-content>
+      <ion-card-title>{{ image.titImg }}</ion-card-title>
+      <p>{{ image.descImg }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

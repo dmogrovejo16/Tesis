@@ -5,7 +5,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home-adm',
     pathMatch: 'full'
   },
   {
@@ -188,7 +188,8 @@ const routes: Routes = [
   {
     path: 'volley-matches-third-est',
     loadChildren: () => import('./volley-matches-third-est/volley-matches-third-est.module').then( m => m.VolleyMatchesThirdEstPageModule)
-  },  {
+  },
+  {
     path: 'input-class-adm',
     loadChildren: () => import('./input-class-adm/input-class-adm.module').then( m => m.InputClassAdmPageModule)
   },
@@ -235,6 +236,14 @@ const routes: Routes = [
   {
     path: 'news-est',
     loadChildren: () => import('./news-est/news-est.module').then( m => m.NewsEstPageModule)
+  },
+  {
+    path: 'create-imagen-adm',
+    loadChildren: () => import('./create-imagen-adm/create-imagen-adm.module').then( m => m.CreateImagenAdmPageModule)
+  },
+  {
+    path: 'photos-view-adm',
+    loadChildren: () => import('./photos-view-adm/photos-view-adm.module').then( m => m.PhotosViewAdmPageModule)
   },
 
   

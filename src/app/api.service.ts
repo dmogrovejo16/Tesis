@@ -80,8 +80,16 @@ this.headers.append('Access-Control-Allow-Origin', '*');
         return this.http.post('http://localhost/createTorunament.php/', data);
       }
 
+      addImagen(formData: FormData){
+        return this.http.post('http://localhost/createImagen.php/', formData);
+      }
+
       getTournaments(){
         return this.http.get('http://localhost/getTournaments.php/');
+      }
+
+      getImagenes(){
+        return this.http.get('http://localhost/getImagenes.php/');
       }
 
 }

@@ -15,6 +15,7 @@ export class CreateBasquetMatchAdmPage implements OnInit {
   equipo1:string="";
   equipo2:string="";
   etapa:string="";
+  ubi:string="";
   nivel:string="";
   disciplina:string="" ;
   email: string | null | undefined;
@@ -90,7 +91,8 @@ this.nombreTorneo=localStorage.getItem('NombreTorneo');
       nivel: this.nivel,
       nombreTorneo: this.nombreTorneo,
       disciplina: this.disciplina,
-      email: this.email
+      email: this.email,
+      ubi:this.ubi
     }
 
     this._apiService.addMatch(data).subscribe((res:any)=>{

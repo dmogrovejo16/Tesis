@@ -13,6 +13,7 @@ export class CreateVolleyMatchAdmPage implements OnInit {
   
   fecha:string="";
   hora: string="";
+  ubi:string="";
   equipo1:string="";
   equipo2:string="";
   etapa:string="";
@@ -90,7 +91,8 @@ this.nombreTorneo=localStorage.getItem('NombreTorneo');
       nivel: this.nivel,
       nombreTorneo: this.nombreTorneo,
       disciplina: this.disciplina,
-      email: this.email
+      email: this.email,
+      ubi:this.ubi
     }
 
     this._apiService.addMatch(data).subscribe((res:any)=>{

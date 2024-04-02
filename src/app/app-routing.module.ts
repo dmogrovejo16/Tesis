@@ -248,6 +248,14 @@ const routes: Routes = [
     path: 'subir-imagen-adm',
     loadChildren: () => import('./subir-imagen-adm/subir-imagen-adm.module').then( m => m.SubirImagenAdmPageModule)
   },
+  {
+    path: 'memorias-adm',
+    loadChildren: () => import('./memorias-adm/memorias-adm.module').then( m => m.MemoriasAdmPageModule)
+  },
+  {
+    path: 'memorias-est',
+    loadChildren: () => import('./memorias-est/memorias-est.module').then( m => m.MemoriasEstPageModule)
+  },
 
 
   

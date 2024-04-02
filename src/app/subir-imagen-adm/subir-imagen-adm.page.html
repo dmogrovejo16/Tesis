@@ -1,0 +1,11 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>subir-imagen-adm</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <input type="file" accept=".png, .jpg, .jpeg" multiple (change)="cargarImagen($event)">
+
+<img src="{{imagenes[0]}}" alt="imagen">
+</ion-content>

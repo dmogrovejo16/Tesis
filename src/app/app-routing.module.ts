@@ -244,7 +244,11 @@ const routes: Routes = [
   {
     path: 'photos-view-adm',
     loadChildren: () => import('./photos-view-adm/photos-view-adm.module').then( m => m.PhotosViewAdmPageModule)
+  },  {
+    path: 'subir-imagen-adm',
+    loadChildren: () => import('./subir-imagen-adm/subir-imagen-adm.module').then( m => m.SubirImagenAdmPageModule)
   },
+
 
   
 ];

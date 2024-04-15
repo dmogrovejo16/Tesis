@@ -38,7 +38,8 @@ this.headers.append('Access-Control-Allow-Origin', '*');
                       }
 
       getStudents(){
-        return this.http.get('http://localhost/getStudents - copia.php/');
+        return this.http.get('http://192.168.1.17/getStudents.php/');
+        
 
       }
 

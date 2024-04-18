@@ -33,5 +33,7 @@ export class PhotosViewAdmPage implements OnInit {
     }
   }
 
+  
+
 
 }

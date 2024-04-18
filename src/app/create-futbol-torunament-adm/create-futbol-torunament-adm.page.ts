@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ToastController } from '@ionic/angular';
+import { LocalNotifications } from '@capacitor/local-notifications';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -58,6 +59,7 @@ if(fechaInicio < fechaFin){
       this.idAdmCreator='';
       this.router.navigate(['/futbol-adm']);
       this.presentToast('Torneo creado exitosamente');
+      this.ngOnInit2();
   },(error: any)=>{ 
     console.log("ERROR ===", error);
   })
@@ -91,6 +93,18 @@ async presentToastBad(message: string) {
     color: 'danger', 
   });
   toast.present();
+}
+async ngOnInit2() {
+  await LocalNotifications.requestPermissions();//solicitar permisos de la app
+  await LocalNotifications.schedule({//Elaboracion del objeto notificacion
+    notifications: [
+      {
+        title: "¡Un nuevo torneo ha empezado!",
+        body: "Entra a la aplicacion para no perderte ninguno de los partidos",
+        id: 1
+      }
+    ]
+  });
 }
 
 }

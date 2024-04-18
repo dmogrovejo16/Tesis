@@ -1,11 +1,42 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>subir-imagen-adm</ion-title>
-  </ion-toolbar>
-</ion-header>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
 
 <ion-content [fullscreen]="true">
-  <input type="file" accept=".png, .jpg, .jpeg" multiple (change)="cargarImagen($event)">
 
-<img src="{{imagenes[0]}}" alt="imagen">
+  <div class="txt">
+    <p >Sube una imagen</p>
+   </div> 
+<div class="img">
+  <img class="imagen" src="https://images.vexels.com/media/users/3/331748/isolated/preview/4a6a0fa5d8a3daafaacce35cd03d0b1d-grupo-de-personas-tomando-fotografa-as.png" alt="">
+</div>
+  <div class="login-container">
+
+    
+    <form action="" class="form" method="post">
+      <label class="text"   >Título de la foto:</label>
+      <input type="text" id="torname" placeholder="Ponle un título único" [(ngModel)]="title"  name="photoName" required>
+
+  <hr>
+  <ion-label position="stacked" class="text"  >Selecciona una imagen: </ion-label>
+  <input type="file" accept=".png, .jpg, .jpeg" multiple (change)="cargarImagen($event)" value="Crear Foto" >
+
+      <hr>
+  <ion-button routerLink="/memorias-adm" color="danger" shape="round">Cancelar</ion-button>
+
+
+       
+
+    </form>
+
+
+  </div>
+
 </ion-content>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../storage.service';
+
 @Component({
   selector: 'app-photos-view-est',
   templateUrl: './photos-view-est.page.html',
@@ -28,6 +29,8 @@ export class PhotosViewEstPage implements OnInit {
       console.error('Error al obtener enlaces de imágenes:', error);
     }
   }
+
+  
 
 
 }

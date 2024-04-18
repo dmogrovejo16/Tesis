@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ToastController } from '@ionic/angular';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { LocalNotifications } from '@capacitor/local-notifications';
+import { StorageService } from '../storage.service';
 @Component({
   selector: 'app-create-basquet-torunament-adm',
   templateUrl: './create-basquet-torunament-adm.page.html',
@@ -56,6 +58,7 @@ export class CreateBasquetTorunamentAdmPage implements OnInit {
           alert('SUCCESS');
           this.router.navigate(['/basquet-adm']);
           this.presentToast('Torneo creado exitosamente');
+          this.ngOnInit2();
       },(error: any)=>{ 
         console.log("ERROR ===", error);
       })
@@ -89,6 +92,19 @@ export class CreateBasquetTorunamentAdmPage implements OnInit {
         color: 'danger', 
       });
       toast.present();
+    }
+
+    async ngOnInit2() {
+      await LocalNotifications.requestPermissions();//solicitar permisos de la app
+      await LocalNotifications.schedule({//Elaboracion del objeto notificacion
+        notifications: [
+          {
+            title: "¡Un nuevo torneo ha empezado!",
+            body: "Entra a la aplicacion para no perderte ninguno de los partidos",
+            id: 1
+          }
+        ]
+      });
     }
     
 }

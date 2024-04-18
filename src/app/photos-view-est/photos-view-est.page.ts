@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
-import { ToastController } from '@ionic/angular';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { StorageService } from '../storage.service';
-
 @Component({
-  selector: 'app-photos-view-adm',
-  templateUrl: './photos-view-adm.page.html',
-  styleUrls: ['./photos-view-adm.page.scss'],
+  selector: 'app-photos-view-est',
+  templateUrl: './photos-view-est.page.html',
+  styleUrls: ['./photos-view-est.page.scss'],
 })
-export class PhotosViewAdmPage implements OnInit {
+export class PhotosViewEstPage implements OnInit {
   imagenes:any;
 
   constructor(private storageService: StorageService) {

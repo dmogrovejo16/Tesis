@@ -19,7 +19,7 @@ export class FutbolMatchesSecondAdmPage implements OnInit {
 
   ngOnInit() {
 
-    this.nombreTorneo=localStorage.getItem("NombreTorneo")?.toUpperCase();
+    this.nombreTorneo=localStorage.getItem("NombreTorneo");
 
     this._apiService.getMatchesSecond().subscribe((res:any)=>{
 

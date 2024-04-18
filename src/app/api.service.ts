@@ -38,13 +38,12 @@ this.headers.append('Access-Control-Allow-Origin', '*');
                       }
 
       getStudents(){
-        return this.http.get('http://192.168.1.15/getStudents.php/');
-        
-
+        return this.http.get('http://192.168.1.7/getStudents.php/');
       }
 
       getAllMatches(){
         return this.http.get('http://localhost/getAllMatches.php/');
+        
 
       }
 

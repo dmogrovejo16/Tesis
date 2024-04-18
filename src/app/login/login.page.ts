@@ -43,6 +43,7 @@ result:any[] | undefined;
 
   if(this.email!="" && this.password!=""){
    
+    
     this._apiService.getStudents().subscribe((res:any)=>{
       console.log("SUCCESS ===", res);
       console.log(this.email);

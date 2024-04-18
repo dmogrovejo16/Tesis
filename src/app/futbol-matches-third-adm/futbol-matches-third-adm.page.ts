@@ -15,7 +15,7 @@ export class FutbolMatchesThirdAdmPage implements OnInit {
   constructor(private el: ElementRef, private http: HttpClient, public _apiService: ApiService) {this.isButton1Disabled=this.isButton2Disabled; }
 
   ngOnInit() {
-    this.nombreTorneo=localStorage.getItem("NombreTorneo")?.toUpperCase();;
+    this.nombreTorneo=localStorage.getItem("NombreTorneo");
 
     this._apiService.getMatchesThird().subscribe((res:any)=>{
       console.log(res);

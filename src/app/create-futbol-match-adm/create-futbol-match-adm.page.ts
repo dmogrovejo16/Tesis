@@ -3,6 +3,8 @@ import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LocalNotifications } from '@capacitor/local-notifications';
+
 @Component({
   selector: 'app-create-futbol-match-adm',
   templateUrl: './create-futbol-match-adm.page.html',
@@ -20,7 +22,7 @@ export class CreateFutbolMatchAdmPage implements OnInit {
   disciplina:string="" ;
   email: string | null | undefined;
   nombreTorneo: string | null | undefined;
-
+cursoEst:any;
   colors: string[] = ["1E1", "1E2", "1A1", "1A2", "1B1", "1B2","1C1","1C2", "1D1", "1D2","1F1","1F2","1F3",
   "2E1", "2E2", "2A1", "2A2", "2B1","2B2","2C1","2C2", "2D1", "2D2","2F1","2F2","2F3",
   "3E1", "3E2", "3A1", "3A2", "3B1","3B2","3C1","3C2", "3D1", "3D2","3F1","3F2","3F3"];
@@ -104,6 +106,11 @@ this.nombreTorneo=localStorage.getItem('NombreTorneo');
     },(error: any)=>{ 
       console.log("ERROR ===", error);
     })
+
+this.cursoEst=localStorage.getItem('CursoEst');
+
+this.ngOnInit2();
+
   } else {
     this.presentToastBad('Los equipos a enfrentarse deben ser del mismo paralelo');
   }
@@ -118,6 +125,19 @@ this.nombreTorneo=localStorage.getItem('NombreTorneo');
 
 }
 
+}
+
+async ngOnInit2() {
+  await LocalNotifications.requestPermissions();//solicitar permisos de la app
+  await LocalNotifications.schedule({//Elaboracion del objeto notificacion
+    notifications: [
+      {
+        title: "¡Nuevo partido agregado!",
+        body: this.equipo1 + " vs "+this.equipo2 + " el " +this.fecha +" a las " + this.hora,
+        id: 1
+      }
+    ]
+  });
 }
 
 }

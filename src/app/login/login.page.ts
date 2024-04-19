@@ -19,13 +19,14 @@ export class LoginPage implements OnInit {
 
 
   name: string = '';
+  alumnos:any;
   password: string = '';
   lastName: string = '';
   email: string = '';
   hashedPassword: string= '';
-
 result:any[] | undefined;
-
+cursoEst:any;
+idEst:any;
   hashPassword(password: string): string {
     return CryptoJS.SHA512(password).toString();
   }
@@ -58,9 +59,17 @@ result:any[] | undefined;
         } 
 
    
-
+        this.idEst=res.find((estudiante: any) => estudiante.email === this.email).id;
         const nombre= res.find((estudiante: any) => estudiante.email === this.email).nombre;
         const apellido= res.find((estudiante: any) => estudiante.email === this.email).apellido;
+        this._apiService.getAlumno().subscribe((res1:any)=>{
+         this.cursoEst=res1.find((alumn: any) => alumn.idEst == this.idEst);
+         localStorage.setItem("CursoEstudiante", this.cursoEst.curso);
+
+        },(error: any)=>{ 
+          console.log("ERROR ===", error);
+        })
+
         console.log(nombre);
         console.log(apellido);
         localStorage.setItem("Name", nombre);
@@ -83,6 +92,8 @@ result:any[] | undefined;
         localStorage.setItem("id", estudianteEncontrado.id);
         localStorage.setItem("Last Name",apellido);
         localStorage.setItem("Email", this.email);
+        localStorage.setItem("CursoEstudiante", "");
+
       } else if(res.some((item: { email: any; }) => item.email === this.email) && !res.some((item: { contrasena: any; }) => item.contrasena === this.password)){
        console.log( res.map((item: { constrasena: any; }) => item.constrasena));
         this.presentToast('Contraseña incorrecta');

@@ -92,4 +92,9 @@ this.headers.append('Access-Control-Allow-Origin', '*');
         return this.http.get('http://192.168.1.7/getImagenes.php/');
       }
 
+      getAlumno(){
+        return this.http.get('http://192.168.1.7/getAlumno.php/');
+
+      }
+
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
+import { LocalNotifications } from '@capacitor/local-notifications';
+
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-create-basquet-match-adm',
@@ -104,6 +106,8 @@ this.nombreTorneo=localStorage.getItem('NombreTorneo');
     },(error: any)=>{ 
       console.log("ERROR ===", error);
     })
+
+    this.ngOnInit2();
   } else {
     this.presentToastBad('Los equipos a enfrentarse deben ser del mismo paralelo');
   }
@@ -118,6 +122,19 @@ this.nombreTorneo=localStorage.getItem('NombreTorneo');
 
 }
 
+}
+
+async ngOnInit2() {
+  await LocalNotifications.requestPermissions();//solicitar permisos de la app
+  await LocalNotifications.schedule({//Elaboracion del objeto notificacion
+    notifications: [
+      {
+        title: "¡Nuevo partido agregado!",
+        body: this.equipo1 + " vs "+this.equipo2 + " el " +this.fecha +" a las " + this.hora,
+        id: 1
+      }
+    ]
+  });
 }
 
 }

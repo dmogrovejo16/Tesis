@@ -26,9 +26,11 @@
 
   <hr>
   <ion-label position="stacked" class="text"  >Selecciona una imagen: </ion-label>
-  <input type="file" accept=".png, .jpg, .jpeg" multiple (change)="cargarImagen($event)" value="Crear Foto" >
+  <input type="file" accept=".png, .jpg, .jpeg" multiple (change)="subirFoto($event)" value="Crear Foto" >
 
       <hr>
+      <ion-button  color="success" shape="round" (click)="cargarImagen()">Aceptar</ion-button>
+
   <ion-button routerLink="/memorias-adm" color="danger" shape="round">Cancelar</ion-button>
 
 

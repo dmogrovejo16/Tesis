@@ -2,7 +2,7 @@ import { Component,ElementRef,  OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
 import { LocalNotifications } from '@capacitor/local-notifications';
-
+import { NotificationsService } from '../notifications.service';
 @Component({
   selector: 'app-all-matches-est',
   templateUrl: './all-matches-est.page.html',

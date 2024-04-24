@@ -9,6 +9,14 @@ import { StorageService } from '../storage.service';
 export class PhotosViewEstPage implements OnInit {
   imagenes:any;
 
+  handleRefresh(event:any) {
+    this.ngOnInit();
+    setTimeout(() => {
+      // Any calls to load data go here
+      event.target.complete();
+    }, 1500);
+  }
+
   constructor(private storageService: StorageService) {
 
     this.obtenerEnlacesDeImagenes();

@@ -22,6 +22,14 @@ export class PhotosViewAdmPage implements OnInit {
   ngOnInit() {
   }
 
+  handleRefresh(event:any) {
+    this.ngOnInit();
+    setTimeout(() => {
+      // Any calls to load data go here
+      event.target.complete();
+    }, 1500);
+  }
+
   async obtenerEnlacesDeImagenes() {
     try {
       const path = 'Productos/'; // Especifica la ruta de tu bucket de Firebase

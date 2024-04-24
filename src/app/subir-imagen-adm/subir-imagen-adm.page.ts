@@ -11,17 +11,23 @@ import { Router } from '@angular/router';
 export class SubirImagenAdmPage implements OnInit {
 imagenes:any=[];
 title: any;
-
+file:any;
   constructor(private router: Router, private storageService:StorageService, private toastController: ToastController) { }
 
   ngOnInit() {
   }
 
-  async cargarImagen(event:any){
+  subirFoto(event:any){
+    const file = event.target.files[0];
+this.file=file;
+  }
+
+ 
+
+  async cargarImagen(){
     const path = 'Productos';
     const name = this.title;
-    const file = event.target.files[0];
-    const res = await this.storageService.uploadImage(file, path, name);
+    const res = await this.storageService.uploadImage(this.file, path, name);
  console.log('Este es el link' + res);
  this.presentToastGood("Imagen subida con éxito");
  this.router.navigate(['/photos-view-adm']);

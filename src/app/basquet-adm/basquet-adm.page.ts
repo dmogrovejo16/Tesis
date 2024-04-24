@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-
+import { ToastController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-basquet-adm',
   templateUrl: './basquet-adm.page.html',
@@ -17,7 +18,62 @@ export class BasquetAdmPage implements OnInit {
   isButton21Disabled: boolean=false;
   isButton31Disabled: boolean=false;
   state: string = "";
-  constructor(private http: HttpClient, public _apiService: ApiService) { }
+  constructor(private toastController: ToastController,public alertController:AlertController, private http: HttpClient, public _apiService: ApiService) { }
+
+  async mostrarAlerta(id:any) {
+    const alert = await this.alertController.create({
+      header: '¿Estás seguro de que deseas eliminar el torneo?',
+      subHeader: 'Información detallada:',
+      message: `Estás a punto de eliminar un torneo, ¿deseas continuar?`,
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Cancelar');
+          }
+        },
+        {
+          text: 'Confirmar',
+          handler: () => {
+            console.log('Confirmar');
+            this._apiService.deleteTournament(id).subscribe((res:any)=>{
+  this.presentToast("El torneo se elimino con éxito");
+             },(error: any)=>{ 
+                console.log("ERROR ===", error);
+                this.presentToastBad("Hubo un problema al eliminar el torneo, intentalo mas tarde");
+              })
+  
+            // Aquí puedes colocar la lógica que desees ejecutar cuando se confirma la acción.
+          }
+        }
+      ]
+    });
+  
+    await alert.present();
+  }   
+
+  
+async presentToast(message: string) {
+  const toast = await this.toastController.create({
+    message: message,
+    duration: 2000, 
+    position: 'bottom', 
+    color: 'success', 
+  });
+  toast.present();
+}
+
+async presentToastBad(message: string) {
+  const toast = await this.toastController.create({
+    message: message,
+    duration: 2000, 
+    position: 'bottom', 
+    color: 'danger', 
+  });
+  toast.present();
+}
 
   ngOnInit() {
     this.isButton11Disabled=!this.isButton1Disabled;

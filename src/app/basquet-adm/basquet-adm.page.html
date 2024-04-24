@@ -25,16 +25,18 @@
   <div class="imagen">
     <img src="https://cdni.iconscout.com/illustration/premium/thumb/basketball-3354969-2802288.png" alt="">
   </div>
-<div class="tour">
+<div class="tour" *ngFor="let torneo of torneos" >
   
 
- <ion-button *ngFor="let torneo of torneos" (click)="obtenerNombre(torneo.nombreTorneo)" routerLink="/levels-tournaments-bask-adm" color="warning" name="nombreT"  [(ngModel)]="nombreTorneo"  class="torneo" shape="round" (click)="onButtonClick()" [disabled]="isButton1Disabled"> 
+ <ion-button (click)="obtenerNombre(torneo.nombreTorneo)" routerLink="/levels-tournaments-bask-adm" color="warning" name="nombreT"  [(ngModel)]="nombreTorneo"  class="torneo" shape="round" (click)="onButtonClick()" [disabled]="isButton1Disabled"> 
   <div class="torneos_one"><div class="txt" id="nombreTor">{{torneo.nombreTorneo}}</div>
   <div class="txt" id="fecha">Empieza el {{torneo.fechaInicio}}</div>
 </div></ion-button>
  
- <ion-button color="warning" routerLink="/create-basquet-torunament-adm" shape="round" ><ion-icon size="large" name="add-circle-outline"></ion-icon></ion-button>
+<ion-button color="danger" shape="round" (click)="mostrarAlerta(torneo.idTorneo)"><ion-icon
+  name="trash-outline"></ion-icon></ion-button>
 </div>
+<ion-button color="warning" routerLink="/create-basquet-torunament-adm" shape="round" ><ion-icon size="large" name="add-circle-outline"></ion-icon></ion-button>
 
 </div>
 

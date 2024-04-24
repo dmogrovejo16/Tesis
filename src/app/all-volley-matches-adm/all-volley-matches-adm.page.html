@@ -8,7 +8,7 @@
   </ion-refresher>
   <div class="nametour">
     <ion-button routerLink="/home-adm" slot="start" color="danger" class="torneo" shape="round"> <ion-icon size="large" name="arrow-back-outline"></ion-icon></ion-button>
-  <h2 class="torname">{{nombreTorneo}}</h2>
+  <h2 class="torname">Partidos de Volleyball</h2>
 </div>
 
 <ion-list  [inset]="true" lines="inset">
@@ -49,7 +49,15 @@
 
         </ion-col>
       </ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col style="height: 2.5rem;" size="12" class="ion-text-center">
 
+        
+            <ion-button shape="round" color="danger"  (click)="mostrarAlerta(partido.idPartido)">Eliminar partido</ion-button>
+           
+        
+        </ion-col>
+      </ion-row>
     </ion-grid>
   </ion-item>
 

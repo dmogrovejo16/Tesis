@@ -76,6 +76,11 @@ this.headers.append('Access-Control-Allow-Origin', '*');
         return this.http.delete('http://192.168.1.7/deleteTournament.php?id='+id);
       }
 
+      deleteMatch(id: any){
+        return this.http.delete('http://192.168.1.7/deleteMatch.php?id='+id);
+      }
+      
+
       addTournament(data: { name: string; fechIni: string; fechFin: string; idAdmCreator: string;  }){
         return this.http.post('http://192.168.1.7/createTorunament.php/', data);
       }

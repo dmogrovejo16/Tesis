@@ -2,7 +2,8 @@ import { Component,ElementRef,  OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
 import { LocalNotifications } from '@capacitor/local-notifications';
-
+import { AlertController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-all-matches-adm',
   templateUrl: './all-matches-adm.page.html',
@@ -28,9 +29,62 @@ equipo2:any;
   minuto:any = this.fecha.getMinutes();
   
   horaCom:any=this.hora+":"+this.minuto+":00";
-  constructor(private el: ElementRef, private http: HttpClient, public _apiService: ApiService) { }
+  constructor(private el: ElementRef, private http: HttpClient, public _apiService: ApiService, private toastController: ToastController, public alertController:AlertController) { }
+
+  async mostrarAlerta(id:any) {
+    const alert = await this.alertController.create({
+      header: '¿Estás seguro de que deseas eliminar el partido?',
+      subHeader: 'Información detallada:',
+      message: `Estás a punto de eliminar un partido, ¿deseas continuar?`,
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Cancelar');
+          }
+        },
+        {
+          text: 'Confirmar',
+          handler: () => {
+            console.log('Confirmar');
+            this._apiService.deleteMatch(id).subscribe((res:any)=>{
+this.presentToastGood("El partido se elimino con éxito");
+             },(error: any)=>{ 
+                console.log("ERROR ===", error);
+                this.presentToastBad("Hubo un problema al eliminar el partido, intentalo mas tarde");
+              })
+
+            // Aquí puedes colocar la lógica que desees ejecutar cuando se confirma la acción.
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
 
 
+  async presentToastGood(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000, 
+      position: 'bottom', 
+      color: 'success', 
+    });
+    toast.present();
+  }
+
+  async presentToastBad(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000, 
+      position: 'bottom', 
+      color: 'danger', 
+    });
+    toast.present();
+  }
   isMenosDeUnaHoraDeDiferencia(hora1: string, hora2: string): boolean {
     // Convertir las horas a objetos Date
     const date1 = new Date(`2000-01-01T${hora1}`);

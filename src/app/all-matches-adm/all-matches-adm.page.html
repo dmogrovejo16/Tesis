@@ -17,7 +17,7 @@
       <ion-row class="ion-align-items-center" >
         <ion-col  size="3">
           <ion-badge color="warning">{{partido.etapa}}</ion-badge>
-          <ion-badge color="danger" >{{partido.disciplina}}</ion-badge>
+          <ion-badge color="secondary" >{{partido.disciplina}}</ion-badge>
         </ion-col>
         <ion-col style="height: 1.5rem;" size="6" class="ion-text-center">
           <p class="date">El {{partido.fechaPartido}} a las {{partido.horaPartido}}</p>
@@ -47,6 +47,16 @@
           <ion-badge color="primary">{{partido.ubiPartido}}</ion-badge>
 
 
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-align-items-center">
+        <ion-col style="height: 2.5rem;" size="12" class="ion-text-center">
+
+        
+            <ion-button shape="round" color="danger"  (click)="mostrarAlerta(partido.idPartido)">Eliminar partido</ion-button>
+           
+        
         </ion-col>
       </ion-row>
 

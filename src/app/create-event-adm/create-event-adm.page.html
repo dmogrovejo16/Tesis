@@ -1,0 +1,52 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
+
+<ion-content class="page">
+  <div class="txt">
+    <p >Crea un nuevo evento para el colegio</p>
+   </div> 
+<div class="img">
+  <img class="imagen" src="https://png.pngtree.com/png-clipart/20230703/original/pngtree-event-planner-flat-style-illustration-vector-png-image_9248305.png" alt="">
+</div>
+  <div class="login-container">
+
+    
+    <form action="" class="form" method="post">
+      <label class="text"   >Nombre del evento:</label>
+      <input type="text" id="torname" placeholder="Ponle un título único" [(ngModel)]="name"  name="photoName" required>
+  <hr>
+  <label class="text"   >Descripcion del evento:</label>
+  <input type="text" id="torname" placeholder="Añade una descripción" [(ngModel)]="desc"  name="photoDesc" required>
+  <hr>
+  <label class="text"   >Lugar del evento:</label>
+  <input type="text" id="torname" placeholder="Ingrese el lugar" [(ngModel)]="lugar"  name="photoDesc" required>
+  <hr>
+  <label class="text"   >Fecha del evento:</label>
+  <input type="date" id="torname" [(ngModel)]="fecha"  name="photoDesc" required>
+  <hr>
+  <ion-label position="stacked">Selecciona una imagen: </ion-label>
+  <ion-input type="file" (change)="subirFoto($event)"></ion-input>
+      <hr>
+  
+ 
+      <input class="inc" type="submit" (click)="cargarEvento()" value="Crear Evento">
+        <input routerLink="/home-adm" class="reg" type="submit" value="Cancelar">
+
+       
+
+    </form>
+
+
+  </div>
+
+
+
+</ion-content>

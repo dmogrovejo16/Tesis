@@ -252,6 +252,14 @@ const routes: Routes = [
     path: 'photos-view-est',
     loadChildren: () => import('./photos-view-est/photos-view-est.module').then( m => m.PhotosViewEstPageModule)
   },
+  {
+    path: 'create-event-adm',
+    loadChildren: () => import('./create-event-adm/create-event-adm.module').then( m => m.CreateEventAdmPageModule)
+  },
+  {
+    path: 'event-view-adm',
+    loadChildren: () => import('./event-view-adm/event-view-adm.module').then( m => m.EventViewAdmPageModule)
+  },
 
 
 

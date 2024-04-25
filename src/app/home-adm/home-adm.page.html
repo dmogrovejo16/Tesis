@@ -1,6 +1,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 <ion-menu contentId="main-content" >
   <ion-header >
     <ion-toolbar >
@@ -98,6 +102,20 @@
       <p>Ver torneos</p>
     </div>
   </div>
+</div>
+<div class="cont">
+<ion-label class="title">Eventos extras</ion-label>
+
+<ion-button shape="round" color="warning" class="container" (click)="enviarInfo(imagen.name, imagen.url)" routerLink="/event-view-adm" *ngFor="let imagen of imagenes">
+  <img class="image"  [src]="imagen.url"alt="Imagen">
+  <div class="nameE">
+    <span>{{imagen.name}}</span>
+  </div>
+</ion-button>
+
+<ion-button color="warning" routerLink="/create-event-adm" shape="round" ><ion-icon size="large" name="add-circle-outline"></ion-icon></ion-button>
+
+
 </div>
 </ion-content>
 

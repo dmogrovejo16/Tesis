@@ -1,0 +1,143 @@
+.torneo{
+    width: 80%;
+    height: 7rem;
+    border-radius: 2rem;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.txt{
+    display: flex;
+    justify-content: center;
+}
+
+.cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.grass{
+    width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: absolute;
+    bottom: 0;
+    opacity: 0.7;
+}
+#fecha{
+    opacity: 0.7;
+}
+
+.circle{
+    width: 28rem;
+    height: 29rem;
+    border-radius: 100%;
+    background-color:  rgb(230, 143, 62);
+    position: absolute;
+    top: -7rem;
+    z-index: -1;
+    
+}
+
+
+ion-content{
+    --ion-background-color:rgba(255, 255, 255, 0.253);
+}
+
+.circle1{
+    width: 31rem;
+    height: 31rem;
+    border-radius: 100%;
+    background-color:  rgba(236, 132, 34, 0.63);
+    position: absolute;
+    top: -7rem;
+    z-index: -2;
+}
+
+.circle2{
+    width: 34rem;
+    height: 34rem;
+    border-radius: 100%;
+    background-color:  rgba(230, 143, 62, 0.267);
+    position: absolute;
+    top: -8rem;
+    z-index: -3;
+}
+
+
+.uno{
+    position: absolute;
+    top: 24.5rem;
+    left: 20rem;
+
+}
+
+.dos{
+    position: absolute;
+    top: 33.5rem;
+    left: 20rem;
+    border-radius: 100%;
+}
+
+.topp{
+    text-align: center;
+    width: 70%;
+    }
+
+.back{
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    border-radius: 100%;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.btnback{
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    background-color: #10dc6200;
+}
+
+.container{
+    display: flex;
+
+align-items: center;
+    flex-direction: column;
+    width: 99%;
+}
+
+
+.tres{
+    position: absolute;
+    top: 42.5rem;
+    left: 20rem;
+    border-radius: 100%;
+}
+
+.title{
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 2rem;
+
+}
+
+.imagen{
+    width: 15rem;
+
+    margin-bottom: 1rem;
+}
+
+.tour{
+    margin-top: 7rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}

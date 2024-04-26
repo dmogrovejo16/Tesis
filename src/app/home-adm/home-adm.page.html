@@ -12,6 +12,9 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding" color="light">
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
 
     <ion-item routerLink="/all-futbol-matches-adm" color="light">
       <ion-icon name="football-outline" slot="start"></ion-icon>
@@ -104,15 +107,17 @@
   </div>
 </div>
 <div class="cont">
-<ion-label class="title">Eventos extras</ion-label>
-
-<ion-button shape="round" color="warning" class="container" (click)="enviarInfo(imagen.name, imagen.url)" routerLink="/event-view-adm" *ngFor="let imagen of imagenes">
+<ion-label class="title" >Eventos extras</ion-label>
+<div class="subsub" *ngFor="let imagen of imagenes">
+<ion-button shape="round" color="warning" class="container" (click)="enviarInfo(imagen.name, imagen.url)" routerLink="/event-view-adm" >
   <img class="image"  [src]="imagen.url"alt="Imagen">
   <div class="nameE">
     <span>{{imagen.name}}</span>
   </div>
 </ion-button>
-
+<ion-button color="danger" shape="round" class="btneli" (click)="mostrarAlerta(imagen.name)"><ion-icon
+  name="trash-outline"></ion-icon></ion-button> 
+</div>
 <ion-button color="warning" routerLink="/create-event-adm" shape="round" ><ion-icon size="large" name="add-circle-outline"></ion-icon></ion-button>
 
 

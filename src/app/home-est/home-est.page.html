@@ -1,6 +1,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
 <ion-menu contentId="main-content" >
   <ion-header >
     <ion-toolbar >
@@ -8,6 +13,9 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding" color="light">
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
 
     <ion-item routerLink="/all-futbol-matches-est" color="light">
       <ion-icon name="football-outline" slot="start"></ion-icon>
@@ -96,6 +104,19 @@
     </div>
   </div>
 </div>
+<div class="cont">
+
+<ion-label class="title" *ngIf="modo" >Eventos extras</ion-label>
+
+<ion-button shape="round" color="warning" class="container" (click)="enviarInfo(imagen.name, imagen.url)" routerLink="/event-view-est" *ngFor="let imagen of imagenes">
+  <img class="image"  [src]="imagen.url"alt="Imagen">
+  <div class="nameE">
+    <span>{{imagen.name}}</span>
+  </div>
+</ion-button>
+
+</div>
+
 </ion-content>
 
 

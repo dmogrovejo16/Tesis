@@ -4,9 +4,26 @@
   display: inline-block;
 }
 
+#volley{
+  margin-bottom: 2rem;
+}
+
 ion-content{
 
   --ion-background-color:#0485ca;
+}
+.profff{
+  margin-right: 0.5rem;
+}
+
+.cont{
+  text-align: center;
+  width: 100%;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .title{
@@ -28,6 +45,30 @@ ion-content{
   z-index: -1;
   width: 200%;
 }
+
+.nameE{
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+
+.container {
+  padding: 20px;
+  width: 80%;
+  border-radius: 5rem;
+  overflow: hidden; 
+  display: flex; 
+  align-items: center;
+}
+
+.image {
+  width: 100px; /* Ancho de la imagen */
+  height: 100px; /* Alto de la imagen */
+  margin-right: 20px; /* Espacio entre la imagen y el contenido */
+}
+
 
 .logo{
   width: 50%;

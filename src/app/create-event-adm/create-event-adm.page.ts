@@ -83,7 +83,6 @@ this.file=file;
     const name = this.name;
     const res = await this.storageService.uploadImage(this.file, path, name);
  console.log('Este es el link' + res);
- this.presentToastGood("Imagen subida con éxito");
  this.router.navigate(['/home-adm']);
  this.ngOnInit2();
  

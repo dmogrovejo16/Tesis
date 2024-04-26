@@ -260,6 +260,10 @@ const routes: Routes = [
     path: 'event-view-adm',
     loadChildren: () => import('./event-view-adm/event-view-adm.module').then( m => m.EventViewAdmPageModule)
   },
+  {
+    path: 'event-view-est',
+    loadChildren: () => import('./event-view-est/event-view-est.module').then( m => m.EventViewEstPageModule)
+  },
 
 
 

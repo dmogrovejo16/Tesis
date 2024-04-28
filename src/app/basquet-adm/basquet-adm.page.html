@@ -28,7 +28,7 @@
 <div class="tour" *ngFor="let torneo of torneos" >
   
 
- <ion-button (click)="obtenerNombre(torneo.nombreTorneo)" routerLink="/levels-tournaments-bask-adm" color="warning" name="nombreT"  [(ngModel)]="nombreTorneo"  class="torneo" shape="round" (click)="onButtonClick()" [disabled]="isButton1Disabled"> 
+ <ion-button  (click)="obtenerNombre(torneo.nombreTorneo)" routerLink="/levels-tournaments-bask-adm" color="warning" name="nombreT"  [(ngModel)]="nombreTorneo"  class="torneo" shape="round" (click)="onButtonClick()" [disabled]="isButton1Disabled"> 
   <div class="torneos_one"><div class="txt" id="nombreTor">{{torneo.nombreTorneo}}</div>
   <div class="txt" id="fecha">Empieza el {{torneo.fechaInicio}}</div>
 </div></ion-button>

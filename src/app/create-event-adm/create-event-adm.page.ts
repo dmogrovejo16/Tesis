@@ -65,6 +65,8 @@ this.file=file;
 
   async cargarEvento(){
 
+    if(this.desc!=null&&this.fecha!=null&&this.lugar!=null&&this.name!=null){
+if(this.file!=null){
     let data = {
       name: this.name,
       desc: this.desc,
@@ -88,8 +90,13 @@ this.file=file;
  
  this.imagenes=res;
  localStorage.setItem('imagenes', this.imagenes);
- 
+}else{
+  this.presentToastBad("Porfavor seleccione una imagen");
+}
 
+}else{
+  this.presentToastBad("Porfavor rellene todos los campos");
+}
 
    }
  

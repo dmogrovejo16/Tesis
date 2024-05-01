@@ -2,17 +2,21 @@ import { Component,ElementRef,  OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
 import { LocalNotifications } from '@capacitor/local-notifications';
-import { AlertController } from '@ionic/angular';
+import { AlertController, IonicSafeString } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
+import { StorageService } from '../storage.service';
+
 @Component({
   selector: 'app-all-matches-adm',
   templateUrl: './all-matches-adm.page.html',
   styleUrls: ['./all-matches-adm.page.scss'],
 })
 export class AllMatchesAdmPage implements OnInit {
-
+linkUbi:any;
+place:any;
 color:any;
 col:any;
+imagenes:any;
 fechaPartidos:any;
 horaPartidos:any;
 equipo1:any;
@@ -21,7 +25,9 @@ equipo2:any;
   nombreTorneo:any;
   id: any;
   Eq1: any;
+  link:any;
   Eq2: any;
+  lugares:any;
   partidos: any[] = [];
   fecha:any = new Date();
   fechaFormato:any=this.formatDateToYYYYMMDD(this.fecha);
@@ -29,7 +35,22 @@ equipo2:any;
   minuto:any = this.fecha.getMinutes();
   
   horaCom:any=this.hora+":"+this.minuto+":00";
-  constructor(private el: ElementRef, private http: HttpClient, public _apiService: ApiService, private toastController: ToastController, public alertController:AlertController) { }
+  constructor(private el: ElementRef,private storageService:StorageService, private http: HttpClient, public _apiService: ApiService, private toastController: ToastController, public alertController:AlertController) { }
+
+  async mostrarAlertaConImagen(ubi:any, link:any) {
+    console.log("Este es el link a mostrar: "+link);
+
+    const alert = await this.alertController.create({
+      animated: true,
+      backdropDismiss: true,
+      cssClass: 'alert-con-imagen',
+      header: ubi,
+      message: new IonicSafeString(`<img src="${link}" />`),     
+       buttons: ['OK']
+    });
+
+    await alert.present();
+  }
 
   async mostrarAlerta(id:any) {
     const alert = await this.alertController.create({
@@ -133,7 +154,8 @@ this.presentToastGood("El partido se elimino con éxito");
         this.horaPartidos = horaPartido;
         this.equipo1=partido.equipo1;
         this.equipo2=partido.equipo2;
-      
+
+
         if (this.isMenosDeUnaHoraDeDiferencia(horaPartido, this.horaCom) && this.horaCom<horaPartido&&this.fechaFormato==fechaPartido) {
           console.log(`Entre ${horaPartido} y ${this.horaCom}, aun no pasa y falta menos de una hora`);
           this.ngOnInit2();
@@ -187,4 +209,65 @@ this.presentToastGood("El partido se elimino con éxito");
     }, 1500);
   }
 
+  async obtenerEnlacesDeImagenes(nombre:any) {
+    try {
+      const path = 'canchas/'; // Especifica la ruta de tu bucket de Firebase
+      const urls = await this.storageService.getAllImageUrls(path);
+      urls.forEach((cancha: any) => {
+
+if(cancha.name==nombre){
+  this.link= cancha.url;
+  console.log("Este el supuezto link: "+ this.link);
+  this.mostrarAlertaConImagen(this.place,this.link);
+
+}
+
+      });
+
+     this.imagenes=urls;
+      console.log('Enlaces de las imágenes:', urls);
+    } catch (error) {
+      console.error('Error al obtener enlaces de imágenes:', error);
+    }
+  }
+
+
+
+ubiPartido(ubi:any){
+this.place=ubi;
+if(ubi=="Cancha de Arena" || ubi=="Cancha arena"){
+this.obtenerEnlacesDeImagenes("CanchaArena.jpg");
+
+}
+ else if(ubi=="Cancha principal" || ubi=="Cancha principal 1"||ubi=="Cancha principal uno" ||ubi=="Cancha 1" ||ubi=="Cancha uno"){
+  this.obtenerEnlacesDeImagenes("CanchaFrontalFutbol.jpg");
+
+
+ }
+ else if(ubi=="Cancha trasera basquetabll" || ubi=="Cancha trasera basquet"|| ubi=="Cancha trasera baloncesto"||ubi=="Cancha trasera 2" ||ubi=="Cancha 3" ||ubi=="Cancha tres"){
+  this.obtenerEnlacesDeImagenes("CanchaFondoBasquet.png");
+
+
+ } else if(ubi=="Cancha trasera de futbol" ||ubi=="Cancha trasera futbol" || ubi=="Cancha trasera 1"|| ubi=="Cancha trasera uno"||ubi=="Cancha 2" ||ubi=="Cancha dos" ||ubi=="Cancha futbol dos"){
+ this.obtenerEnlacesDeImagenes("CanchaTraseraFutbol.webp");
+
+
+ }
+ else if(ubi=="Cancha coliseo" || ubi=="Cancha del coliseo"|| ubi=="Cancha de el coliseo"||ubi=="Cancha Miguel Merchan" ||ubi=="Cancha Miguel Merchan Ochoa" ||ubi=="Cancha coliseo Miguel Merchan Ochoa"  ||ubi=="Cancha coliseo Miguel Merchan"){
+  this.obtenerEnlacesDeImagenes("CanchaColiseo.jpg");
+
+
+ }
+ else if(ubi=="Cancha indor" || ubi=="Cancha de indor"|| ubi=="Cancha de futbol indor"||ubi=="Cancha 4" ||ubi=="Cancha cuatro" ||ubi=="Cancha futbol 3"){
+  this.obtenerEnlacesDeImagenes("CanchaColiseo.jpg");
+
+
+ }
+ else if(ubi=="Cancha 5" || ubi=="Cancha 5"|| ubi=="Cancha de basquet 2"||ubi=="Cancha de basquet dos" ||ubi=="Cancha basquet 2" ||ubi=="Cancha basquet dos" ||ubi=="Cancha baloncesto dos" ||ubi=="Cancha baloncesto 2"){
+this.obtenerEnlacesDeImagenes("CanchaColiseo.jpg");
+
+
+ }
+
+}
 }

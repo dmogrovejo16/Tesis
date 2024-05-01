@@ -3,6 +3,16 @@
     opacity: 0.8;
   
 }
+.alert-con-imagen .alert-message {
+    display: flex;
+    align-items: center;
+  }
+  
+  .alert-con-imagen img {
+    width: 50%;
+    height: auto;
+    margin-right: 10px;
+  }
 
 .torneo{
     width: 5rem;

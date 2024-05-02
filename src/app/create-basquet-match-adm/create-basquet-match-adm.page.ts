@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
 import { LocalNotifications } from '@capacitor/local-notifications';
@@ -32,11 +32,13 @@ export class CreateBasquetMatchAdmPage implements OnInit {
   searchTerm: string = "";
   
   filteredColors: string[] = this.colors;
-  constructor(private router: Router,public _apiService: ApiService,private http: HttpClient,private toastController: ToastController, private route: ActivatedRoute) { }
+  constructor(private navCtrl: NavController,private router: Router,public _apiService: ApiService,private http: HttpClient,private toastController: ToastController, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
-
+  goBack() {
+    this.navCtrl.back();
+  }
   filterColors() {
     this.filteredColors = this.colors.filter((color) => color.toLowerCase().includes(this.searchTerm.toLowerCase()));
    
@@ -100,7 +102,7 @@ this.nombreTorneo=localStorage.getItem('NombreTorneo');
     this._apiService.addMatch(data).subscribe((res:any)=>{
 
       console.log("SUCCESS ===", res);
-      this.router.navigate(['/basquet-matches-adm']);
+      this.goBack();
       this.presentToastGood('Partido creado con éxito');
 
     },(error: any)=>{ 

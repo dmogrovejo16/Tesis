@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
-import { ToastController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -17,12 +17,14 @@ export class InputResultsMatchesVolAdmPage implements OnInit {
   resEq1:any;
   resEq2:any;
   
-  constructor(private router: Router,public _apiService: ApiService,private http: HttpClient,private toastController: ToastController, private route: ActivatedRoute) {
+  constructor(private navCtrl: NavController,private router: Router,public _apiService: ApiService,private http: HttpClient,private toastController: ToastController, private route: ActivatedRoute) {
     this.id=localStorage.getItem("idPartido");
     this.Eq1=localStorage.getItem("Equipo1");
     this.Eq2=localStorage.getItem("Equipo2");
    }
-
+   goBack() {
+    this.navCtrl.back();
+  }
   ngOnInit() {
     this.id=localStorage.getItem("idPartido");
     this.Eq1=localStorage.getItem("Equipo1");
@@ -45,8 +47,8 @@ resultMatch(){
   this._apiService.resultMatch(data).subscribe((res:any)=>{
 
     console.log("SUCCESS ===", res);
-    this.router.navigate(['/volley-matches-adm']);
-    this.presentToastGood('Resultado ingresado con éxito');
+    this.goBack();
+        this.presentToastGood('Resultado ingresado con éxito');
 
   },(error: any)=>{ 
     console.log("ERROR ===", error);

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -31,11 +31,13 @@ cursoEst:any;
   searchTerm: string = "";
   
   filteredColors: string[] = this.colors;
-  constructor(private router: Router,public _apiService: ApiService,private http: HttpClient,private toastController: ToastController, private route: ActivatedRoute) { }
+  constructor(private navCtrl: NavController,private router: Router,public _apiService: ApiService,private http: HttpClient,private toastController: ToastController, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
-
+  goBack() {
+    this.navCtrl.back();
+  }
   filterColors() {
     this.filteredColors = this.colors.filter((color) => color.toLowerCase().includes(this.searchTerm.toLowerCase()));
    
@@ -100,8 +102,8 @@ this.nombreTorneo=localStorage.getItem('NombreTorneo');
     this._apiService.addMatch(data).subscribe((res:any)=>{
 
       console.log("SUCCESS ===", res);
-      this.router.navigate(['/futbol-matches-adm']);
-      this.presentToastGood('Partido creado con éxito');
+      this.goBack();
+            this.presentToastGood('Partido creado con éxito');
 
     },(error: any)=>{ 
       console.log("ERROR ===", error);

@@ -7,7 +7,7 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   <div class="nametour">
-    <ion-button routerLink="/home-adm" slot="start" color="primary" class="torneo" shape="round"> <ion-icon size="large" name="arrow-back-outline"></ion-icon></ion-button>
+    <ion-button routerLink="/home-est" slot="start" color="primary" class="torneo" shape="round"> <ion-icon size="large" name="arrow-back-outline"></ion-icon></ion-button>
   <h2 class="torname">Partidos UETS</h2>
 </div>
 
@@ -45,7 +45,7 @@
         <ion-col style="height: 2rem;" size="12" class="ion-text-center">
 
 
-          <ion-badge color="primary">{{partido.ubiPartido}}</ion-badge>
+          <ion-button color="primary" (click)="ubiPartido(partido.ubiPartido)"  shape="round">    <ion-badge color="primary" >{{partido.ubiPartido}} </ion-badge><ion-icon name="eye-outline"></ion-icon></ion-button>
 
 
         </ion-col>

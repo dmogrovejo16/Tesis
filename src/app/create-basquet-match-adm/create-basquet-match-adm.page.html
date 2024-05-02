@@ -56,8 +56,18 @@
       <input type="time" id="hourIn" [(ngModel)]="hora" name="hour" required>
       <hr>
       <label class="text"  for="hora">Lugar:</label>
-      <input type="text" id="ubi" [(ngModel)]="ubi" name="ubi" placeholder="Cancha 1, Cancha 2, etc..." required>
-
+      <select id="etaplab" name="ubi" [(ngModel)]="ubi" >
+        <option class="etape"  disabled selected>Selecciona una cancha:</option>
+        <option value="Cancha Coliseo"  class="gradeOp" >Cancha Coliseo</option>
+        <option value="Cancha Cubierta" class="gradeOp" >Cancha Cubierta</option>
+        <option value="Cancha de Arena" class="gradeOp">Cancha de Arena</option>
+        <option value="Cancha 1"  class="gradeOp">Cancha 1</option>
+        <option value="Cancha 2" class="gradeOp">Cancha 2</option>
+        <option value="Cancha 3" class="gradeOp">Cancha 3</option>
+        <option value="Cancha 4" class="gradeOp">Cancha 4</option>
+        <option value="Cancha 5" class="gradeOp">Cancha 5</option>
+        <option value="Cancha 6" class="gradeOp">Cancha 6</option>
+      </select>
       <hr>
       <label class="text"  for="hora">Disciplina:</label>
       <select id="etaplab" name="dis" [(ngModel)]="disciplina">

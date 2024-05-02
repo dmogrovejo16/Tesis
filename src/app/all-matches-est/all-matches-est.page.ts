@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
 import { LocalNotifications } from '@capacitor/local-notifications';
 import { NotificationsService } from '../notifications.service';
+import { StorageService } from '../storage.service';
+import { AlertController, IonicSafeString } from '@ionic/angular';
 @Component({
   selector: 'app-all-matches-est',
   templateUrl: './all-matches-est.page.html',
@@ -14,11 +16,13 @@ export class AllMatchesEstPage implements OnInit {
 
   color:any;
   col:any;
+  place:any
   fechaPartidos:any;
   horaPartidos:any;
   equipo1:any;
   equipo2:any;
-  
+  link:any;
+  imagenes:any;
     nombreTorneo:any;
     id: any;
     Eq1: any;
@@ -30,7 +34,22 @@ export class AllMatchesEstPage implements OnInit {
     minuto:any = this.fecha.getMinutes();
     
     horaCom:any=this.hora+":"+this.minuto+":00";
-  constructor(private el: ElementRef, private http: HttpClient, public _apiService: ApiService) { }
+  constructor(private storageService:StorageService, public alertController:AlertController,private el: ElementRef, private http: HttpClient, public _apiService: ApiService) { }
+
+  async mostrarAlertaConImagen(ubi:any, link:any) {
+    console.log("Este es el link a mostrar: "+link);
+
+    const alert = await this.alertController.create({
+      animated: true,
+      backdropDismiss: true,
+      cssClass: 'alert-con-imagen',
+      header: ubi,
+      message: new IonicSafeString(`<img src="${link}" />`),     
+       buttons: ['OK']
+    });
+
+    await alert.present();
+  }
 
   formatDateToYYYYMMDD(date: Date): string {
     const year = date.getFullYear();
@@ -119,4 +138,63 @@ export class AllMatchesEstPage implements OnInit {
     }, 1500);
   }
 
+  async obtenerEnlacesDeImagenes(nombre:any) {
+    try {
+      const path = 'canchas/'; // Especifica la ruta de tu bucket de Firebase
+      const urls = await this.storageService.getAllImageUrls(path);
+      urls.forEach((cancha: any) => {
+
+if(cancha.name==nombre){
+  this.link= cancha.url;
+  console.log("Este el supuezto link: "+ this.link);
+  this.mostrarAlertaConImagen(this.place,this.link);
+
+}
+
+      });
+
+     this.imagenes=urls;
+      console.log('Enlaces de las imágenes:', urls);
+    } catch (error) {
+      console.error('Error al obtener enlaces de imágenes:', error);
+    }
+  }
+
+  ubiPartido(ubi:any){
+    this.place=ubi;
+    if(ubi=="Cancha de Arena" || ubi=="Cancha arena"){
+    this.obtenerEnlacesDeImagenes("CanchaArena.jpg");
+    
+    }
+     else if(ubi=="Cancha principal" || ubi=="Cancha principal 1"||ubi=="Cancha principal uno" ||ubi=="Cancha 1" ||ubi=="Cancha uno"){
+      this.obtenerEnlacesDeImagenes("CanchaFrontalFutbol.jpg");
+    
+    
+     }
+     else if(ubi=="Cancha trasera basquetabll" || ubi=="Cancha trasera basquet"|| ubi=="Cancha trasera baloncesto"||ubi=="Cancha trasera 2" ||ubi=="Cancha 3" ||ubi=="Cancha tres"){
+      this.obtenerEnlacesDeImagenes("CanchaFondoBasquet.png");
+    
+    
+     } else if(ubi=="Cancha trasera de futbol" ||ubi=="Cancha trasera futbol" || ubi=="Cancha trasera 1"|| ubi=="Cancha trasera uno"||ubi=="Cancha 2" ||ubi=="Cancha dos" ||ubi=="Cancha futbol dos"){
+     this.obtenerEnlacesDeImagenes("CanchaTraseraFutbol.webp");
+    
+    
+     }
+     else if(ubi=="Cancha coliseo" || ubi=="Cancha del coliseo"|| ubi=="Cancha de el coliseo"||ubi=="Cancha Miguel Merchan" ||ubi=="Cancha Miguel Merchan Ochoa" ||ubi=="Cancha coliseo Miguel Merchan Ochoa"  ||ubi=="Cancha coliseo Miguel Merchan"){
+      this.obtenerEnlacesDeImagenes("CanchaColiseo.jpg");
+    
+    
+     }
+     else if(ubi=="Cancha indor" || ubi=="Cancha de indor"|| ubi=="Cancha de futbol indor"||ubi=="Cancha 4" ||ubi=="Cancha cuatro" ||ubi=="Cancha futbol 3"){
+      this.obtenerEnlacesDeImagenes("CanchaColiseo.jpg");
+    
+    
+     }
+     else if(ubi=="Cancha 5" || ubi=="Cancha 5"|| ubi=="Cancha de basquet 2"||ubi=="Cancha de basquet dos" ||ubi=="Cancha basquet 2" ||ubi=="Cancha basquet dos" ||ubi=="Cancha baloncesto dos" ||ubi=="Cancha baloncesto 2"){
+    this.obtenerEnlacesDeImagenes("CanchaColiseo.jpg");
+    
+    
+     }
+    
+    }
 }

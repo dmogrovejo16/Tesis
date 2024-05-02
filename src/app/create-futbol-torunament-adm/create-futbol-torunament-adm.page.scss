@@ -15,7 +15,12 @@
     background-color: #0485ca;
 }
 
-
+.cont{
+  display: flex;
+  align-items:center ;
+  justify-content: center;
+  flex-direction: column;
+}
 
 .or{
     font-family: 'Rubik', sans-serif;

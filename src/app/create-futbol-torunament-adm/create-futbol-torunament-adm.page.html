@@ -30,10 +30,10 @@
       <input type="date" id="fechaFinalizacion" [(ngModel)]="fechFin" name="fechFin" required>
       <hr>
   
- 
-      <input class="inc" type="submit" (click)="addTournament()" value="Crear Torneo">
-        <input routerLink="/futbol-adm" class="reg" type="submit" value="Cancelar">
-
+ <div class="cont">
+      <ion-button type="submit" (click)="addTournament()" value="Crear Torneo" shape="round" color="success">Crear Torneo</ion-button>
+        <ion-button  routerLink="/futbol-adm" type="submit" value="Cancelar" shape="round" color="danger">Cancelar</ion-button>
+      </div>
        
 
     </form>

@@ -12,10 +12,10 @@
 </div>
 
 <ion-list  [inset]="true" lines="inset">
-  <ion-item *ngFor="let partido of partidos"   >
+  <ion-item *ngFor="let partido of partidos" style="margin-bottom: 1rem;"  >
     <ion-grid >
       <ion-row class="ion-align-items-center" >
-        <ion-col  size="3"  >
+        <ion-col  size="3" style="margin-bottom: 1rem;" >
           <ion-badge color="warning">{{partido.etapa}}</ion-badge>
           
         </ion-col>
@@ -43,8 +43,8 @@
     
       <ion-row  class="ion-align-items-center" >
         
-        <ion-col  style="height: 2rem;" size="12" class="ion-text-center" >
-      <ion-badge color="primary">{{partido.ubiPartido}}</ion-badge>
+        <ion-col  style="height: 2rem; margin-bottom: 1rem;" size="12" class="ion-text-center" >
+          <ion-button color="primary" (click)="ubiPartido(partido.ubiPartido)"  shape="round">    <ion-badge color="primary" >{{partido.ubiPartido}} </ion-badge><ion-icon name="eye-outline"></ion-icon></ion-button>
     </ion-col>
     </ion-row>
 

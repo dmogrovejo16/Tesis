@@ -42,20 +42,28 @@
       <ion-row  class="ion-align-items-center" >
         
         <ion-col  style="height: 2rem;" size="12" class="ion-text-center" >
-      <ion-badge color="primary">{{partido.ubiPartido}}</ion-badge>
+          <ion-button color="primary" (click)="ubiPartido(partido.ubiPartido)"  shape="round">    <ion-badge color="primary" >{{partido.ubiPartido}} </ion-badge><ion-icon name="eye-outline"></ion-icon></ion-button>
     </ion-col>
     </ion-row>
       <ion-row class="ion-align-items-center">
         <ion-col style="height: 2rem;" size="12" class="ion-text-center">
 
 
-        <button  routerLink="/input-results-matches-vol-adm"  style="background-color: rgba(255, 255, 255, 0); width: auto;">
-          <ion-icon size="large" name="medal"></ion-icon>
-        </button>
+        <ion-button color="warning" shape="round"  routerLink="/input-results-matches-vol-adm"  style="background-color: rgba(255, 255, 255, 0); width: auto;">
+          Ingresar resultados
+        </ion-button>
 
         </ion-col>
       </ion-row>
-
+      <ion-row class="ion-align-items-center">
+        <ion-col style="height: 2.5rem;" size="12" class="ion-text-center">
+  
+        
+            <ion-button shape="round" color="danger"  (click)="mostrarAlerta(partido.idPartido)"><ion-icon name="trash-outline"></ion-icon></ion-button>
+           
+        
+        </ion-col>
+      </ion-row>
     </ion-grid>
   </ion-item>
 

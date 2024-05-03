@@ -48,7 +48,7 @@
       <ion-row  class="ion-align-items-center" >
         
         <ion-col  style="height: 2rem;" size="12" class="ion-text-center" >
-      <ion-badge color="primary">{{partido.ubiPartido}}</ion-badge>
+          <ion-button color="primary" (click)="ubiPartido(partido.ubiPartido)"  shape="round">    <ion-badge color="primary" >{{partido.ubiPartido}} </ion-badge><ion-icon name="eye-outline"></ion-icon></ion-button>
     </ion-col>
     </ion-row>
 

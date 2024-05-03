@@ -12,10 +12,10 @@
 </div>
 
 <ion-list  [inset]="true" lines="inset">
-  <ion-item *ngFor="let partido of partidos"   >
+  <ion-item *ngFor="let partido of partidos" style="margin-bottom: 1rem;"    >
     <ion-grid >
       <ion-row class="ion-align-items-center" >
-        <ion-col  size="3" >
+        <ion-col  size="3" style="margin-bottom: 1rem;"  >
           <ion-badge color="warning">{{partido.etapa}}</ion-badge>
           
         </ion-col>
@@ -46,15 +46,7 @@
           </ion-col>
       </ion-row>
 
-      <ion-row class="ion-align-items-center">
-        <ion-col style="height: 2.5rem;" size="12" class="ion-text-center">
 
-        
-            <ion-button shape="round" color="danger"  (click)="mostrarAlerta(partido.idPartido)">Eliminar partido</ion-button>
-           
-        
-        </ion-col>
-      </ion-row>
 
       <ion-row class="ion-align-items-center">
        
@@ -63,13 +55,20 @@
          
 
 
-        <button  routerLink="/input-results-matches-basq-adm" (click)="enviarID(partido.idPartido, partido.equipo1, partido.equipo2)" style="background-color: rgba(255, 255, 255, 0); width: auto;">
-          <ion-icon size="large" name="medal"></ion-icon>
-        </button>
+        <ion-button color="warning" shape="round" routerLink="/input-results-matches-basq-adm" (click)="enviarID(partido.idPartido, partido.equipo1, partido.equipo2)" style="background-color: rgba(255, 255, 255, 0); width: auto;">
+Ingresar Resultado        </ion-button>
 
         </ion-col>
       </ion-row>
-   
+      <ion-row class="ion-align-items-center">
+        <ion-col style="height: 2.5rem;" size="12" class="ion-text-center">
+
+        
+            <ion-button shape="round" color="danger"  (click)="mostrarAlerta(partido.idPartido)"><ion-icon name="trash-outline"></ion-icon></ion-button>
+           
+        
+        </ion-col>
+      </ion-row>
 
     </ion-grid>
   </ion-item>

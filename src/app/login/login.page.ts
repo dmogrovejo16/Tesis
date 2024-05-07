@@ -56,6 +56,7 @@ idEst:any;
         const estudianteEncontrado = res.find((estudiante: any) => estudiante.email === this.email);
         if (estudianteEncontrado) {
           const idEstudiante = estudianteEncontrado.id;
+          localStorage.setItem("idUser",idEstudiante);
         } 
 
    
@@ -81,6 +82,7 @@ idEst:any;
        
         if (estudianteEncontrado) {
           const idEstudiante = estudianteEncontrado.id;
+          localStorage.setItem("idUser",idEstudiante);
         } 
         this.router.navigate(['/home-adm']);
         this.presentToastGood('Resgistro exitoso');

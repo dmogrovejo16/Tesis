@@ -10,7 +10,8 @@ import { ApiService } from '../api.service';
 })
 export class ProfileEstPage implements OnInit {
   curso:any;
-
+est:any;
+idAdministrador:any;
   esp: string = " ";
   nombreCapitalizado: any = localStorage.getItem("Name");
   email: string| null = localStorage.getItem("Email");
@@ -25,7 +26,16 @@ export class ProfileEstPage implements OnInit {
 
   ngOnInit() {
     this.nombreCompleto=this.nombreCapitalizado+" "+this.apellido
-    this.curso=localStorage.getItem("curso");
+    this.est = this._apiService.getAlumnos().subscribe((res:any)=>{
+      res.forEach((est:any) => {
+      if(est.idAdm==this.idAdministrador ){
+        this.curso=est.curso;
+      }
+      });
+    },(error: any)=>{ 
+      alert('ERROR');
+      console.log("ERROR ===", error);
+    })
 
 }
 

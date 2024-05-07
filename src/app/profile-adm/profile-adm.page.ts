@@ -16,11 +16,29 @@ export class ProfileAdmPage implements OnInit {
   apellido: any = localStorage.getItem("Last Name")!;
   apellidoCapitalizado:any= this.apellido;
   email: string| null = localStorage.getItem("Email");
-
+  idAdministrador:any;
+  idArea:any;
+adm:any;
   nombreCompleto:any;
+  idAreaMayuscula:any;
 
 
-  constructor(private router: Router, private alertController: AlertController,public _apiService: ApiService, private toastController: ToastController) {}
+  constructor(private router: Router, private alertController: AlertController,public _apiService: ApiService, private toastController: ToastController) 
+  {
+    this.idAdministrador=localStorage.getItem("idUser");
+    this.adm = this._apiService.getAdministradores().subscribe((res:any)=>{
+      res.forEach((adm:any) => {
+      if(adm.idAdm==this.idAdministrador ){
+        this.idArea=adm.area;
+        this.idAreaMayuscula = this.idArea.charAt(0).toUpperCase() + this.idArea.slice(1);
+
+      }
+      });
+    },(error: any)=>{ 
+      alert('ERROR');
+      console.log("ERROR ===", error);
+    })
+  }
 
   ngOnInit() {
     this.area=localStorage.getItem("area");

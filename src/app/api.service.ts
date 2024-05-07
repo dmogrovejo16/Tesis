@@ -101,6 +101,10 @@ this.headers.append('Access-Control-Allow-Origin', '*');
         return this.http.get('http://192.168.1.11/getAlumno.php/');
 
       }
+      getAlumnos(){
+        return this.http.get('http://192.168.1.11/getAlumnos.php/');
+
+      }
 
       createEvent(data: { name: any; desc: any; fecha: any; lugar: any; }){
         return this.http.post('http://192.168.1.11/createEvent.php/', data);
@@ -108,6 +112,11 @@ this.headers.append('Access-Control-Allow-Origin', '*');
 
       getEvents(){
         return this.http.get('http://192.168.1.11/getEvents.php/');
+
+      }
+
+      getAdministradores(){
+        return this.http.get('http://192.168.1.11/getAdministradores.php/');
 
       }
 

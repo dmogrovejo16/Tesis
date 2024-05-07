@@ -114,7 +114,7 @@ this.cursoEst=localStorage.getItem('CursoEst');
 this.ngOnInit2();
 
   } else {
-    this.presentToastBad('Los equipos a enfrentarse deben ser del mismo paralelo');
+    this.presentToastBad('Los equipos a enfrentarse deben ser del mismo nivel');
   }
 
   }else{

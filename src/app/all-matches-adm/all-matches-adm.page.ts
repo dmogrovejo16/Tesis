@@ -235,6 +235,7 @@ if(cancha.name==nombre){
 
   ubiPartido(ubi:any){
     this.place=ubi;
+    console.log(ubi);
     if(ubi=="Cancha de Arena"){
     this.obtenerEnlacesDeImagenes("CanchaArena.jpg");
     

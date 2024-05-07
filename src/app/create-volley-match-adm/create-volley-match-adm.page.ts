@@ -107,7 +107,7 @@ this.nombreTorneo=localStorage.getItem('NombreTorneo');
       console.log("ERROR ===", error);
     })
   } else {
-    this.presentToastBad('Los equipos a enfrentarse deben ser del mismo paralelo');
+    this.presentToastBad('Los equipos a enfrentarse deben ser del mismo nivel');
   }
 
   }else{

@@ -96,7 +96,6 @@ async presentToastBad(message: string) {
 async mostrarAlerta(id:any) {
   const alert = await this.alertController.create({
     header: '¿Estás seguro de que deseas eliminar el torneo?',
-    subHeader: 'Información detallada:',
     message: `Estás a punto de eliminar un torneo, ¿deseas continuar?`,
     buttons: [
       {

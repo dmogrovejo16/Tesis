@@ -162,39 +162,46 @@ if(cancha.name==nombre){
 
   ubiPartido(ubi:any){
     this.place=ubi;
-    if(ubi=="Cancha de Arena" || ubi=="Cancha arena"){
+    if(ubi=="Cancha de Arena"){
     this.obtenerEnlacesDeImagenes("CanchaArena.jpg");
     
     }
-     else if(ubi=="Cancha principal" || ubi=="Cancha principal 1"||ubi=="Cancha principal uno" ||ubi=="Cancha 1" ||ubi=="Cancha uno"){
+     else if(ubi=="Cancha principal (sintética)"){
       this.obtenerEnlacesDeImagenes("CanchaFrontalFutbol.jpg");
     
     
      }
-     else if(ubi=="Cancha trasera basquetabll" || ubi=="Cancha trasera basquet"|| ubi=="Cancha trasera baloncesto"||ubi=="Cancha trasera 2" ||ubi=="Cancha 3" ||ubi=="Cancha tres"){
+     else if(ubi=="Cancha trasera Basquet 1" || ubi=="Cancha trasera Basquet 2"|| ubi=="Cancha trasera Basquet 13"){
       this.obtenerEnlacesDeImagenes("CanchaFondoBasquet.png");
     
     
-     } else if(ubi=="Cancha trasera de futbol" ||ubi=="Cancha trasera futbol" || ubi=="Cancha trasera 1"|| ubi=="Cancha trasera uno"||ubi=="Cancha 2" ||ubi=="Cancha dos" ||ubi=="Cancha futbol dos"){
+     }  else if(ubi=="Cancha trasera Volleyball 1" || ubi=="Cancha trasera Volleyball 2"){
+      this.obtenerEnlacesDeImagenes("WhatsApp Image 2024-05-07 at 15.17.17.jpeg");
+    
+    
+     }else if(ubi=="Cancha trasera Futbol"){
      this.obtenerEnlacesDeImagenes("CanchaTraseraFutbol.webp");
     
     
      }
-     else if(ubi=="Cancha coliseo" || ubi=="Cancha del coliseo"|| ubi=="Cancha de el coliseo"||ubi=="Cancha Miguel Merchan" ||ubi=="Cancha Miguel Merchan Ochoa" ||ubi=="Cancha coliseo Miguel Merchan Ochoa"  ||ubi=="Cancha coliseo Miguel Merchan"){
-      this.obtenerEnlacesDeImagenes("CanchaColiseo.jpg");
+     else if(ubi=="Cancha Volleyball 1" || ubi=="Cancha Volleyball 2"|| ubi=="Cancha Volleyball 3"){
+      this.obtenerEnlacesDeImagenes("CanchaFrenteIndor.webp");
     
     
      }
-     else if(ubi=="Cancha indor" || ubi=="Cancha de indor"|| ubi=="Cancha de futbol indor"||ubi=="Cancha 4" ||ubi=="Cancha cuatro" ||ubi=="Cancha futbol 3"){
-      this.obtenerEnlacesDeImagenes("CanchaColiseo.jpg");
-    
-    
-     }
-     else if(ubi=="Cancha 5" || ubi=="Cancha 5"|| ubi=="Cancha de basquet 2"||ubi=="Cancha de basquet dos" ||ubi=="Cancha basquet 2" ||ubi=="Cancha basquet dos" ||ubi=="Cancha baloncesto dos" ||ubi=="Cancha baloncesto 2"){
+     else if(ubi=="Cancha Coliseo" ){
     this.obtenerEnlacesDeImagenes("CanchaColiseo.jpg");
     
     
-     }
+     }else if(ubi=="Cancha Cubierta" ){
+      this.obtenerEnlacesDeImagenes("CanchaColiseo.jpg");
+      
+      
+       }else if(ubi=="Cancha Basquetball" ){
+        this.obtenerEnlacesDeImagenes("CanchaBasquet.jpg");
+        
+        
+         }
     
     }
 }

@@ -76,7 +76,7 @@
 
   <div class="cards">
 
-  <div class="card" routerLink="/futbol-adm" >
+  <div class="card" routerLink="/futbol-adm" (click)="disciplina('Futbol')">
     <button class="img-btn" >
     <img src="https://www.tecnicodeportivo.net/wp-content/uploads/2023/05/Beneficios_jugar_futbol.jpg" alt="Imagen de ejemplo">
   </button >
@@ -86,7 +86,7 @@
     </div>
   </div>
 
-  <div class="card" routerLink="/basquet-adm" >
+  <div class="card" routerLink="/basquet-adm" (click)="disciplina('Basquetball')" >
     <button class="img-btn" >
     <img class="bas" src="https://th.bing.com/th/id/OIP.KSKXPlejsRuP8wNh8-bRQgHaFJ?rs=1&pid=ImgDetMain" alt="Imagen de ejemplo">
   </button >
@@ -96,7 +96,7 @@
     </div>
   </div>
 
-  <div class="card" id="volley" routerLink="/volley-adm" >
+  <div class="card" id="volley" routerLink="/volley-adm" (click)="disciplina('Volleyball')" >
     <button class="img-btn" >
     <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Algeria_and_Japan_women%27s_national_volleyball_team_at_the_2012_Summer_Olympics_%287913959028%29.jpg" alt="Imagen de ejemplo">
   </button >

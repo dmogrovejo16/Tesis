@@ -11,7 +11,7 @@ import { LocalNotifications } from '@capacitor/local-notifications';
   styleUrls: ['./create-futbol-match-adm.page.scss'],
 })
 export class CreateFutbolMatchAdmPage implements OnInit {
-
+deporte:any;
   fecha:string="";
   hora: string="";
   ubi:string="";
@@ -66,7 +66,7 @@ cursoEst:any;
 
   crearPartido(){
 
-    if(this.fecha!=''&&this.hora!=''&&this.equipo1!=''&&this.equipo2!=''&&this.etapa!=''&&this.disciplina!=''){
+    if(this.fecha!=''&&this.hora!=''&&this.equipo1!=''&&this.equipo2!=''&&this.etapa!=''){
 
 
 if(this.equipo1!=this.equipo2){
@@ -82,6 +82,7 @@ if(this.equipo1.charAt(0).toLowerCase() == '1'){
 }else{
   this.nivel='Tercero';
 }
+this.deporte=localStorage.getItem("deporte");
 
     this.email= localStorage.getItem('Email');
 this.nombreTorneo=localStorage.getItem('NombreTorneo');
@@ -93,7 +94,7 @@ this.nombreTorneo=localStorage.getItem('NombreTorneo');
       etapa: this.etapa,
       nivel: this.nivel,
       nombreTorneo: this.nombreTorneo,
-      disciplina: this.disciplina,
+      disciplina: this.deporte,
       email: this.email,
       ubi:this.ubi
 

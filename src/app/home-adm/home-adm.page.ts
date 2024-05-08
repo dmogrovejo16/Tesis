@@ -109,6 +109,11 @@ event:any;
       }, 1500);
     } 
 
+disciplina(deporte:any){
+localStorage.setItem("deporte",deporte);
+console.log(deporte);
+}
+
   enviarInfo(name:any, url:any){
 this.apiService.getEvents().subscribe((res:any)=>{ 
  

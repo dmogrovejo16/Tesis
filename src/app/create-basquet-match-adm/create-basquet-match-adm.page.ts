@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./create-basquet-match-adm.page.scss'],
 })
 export class CreateBasquetMatchAdmPage implements OnInit {
-  
+  deporte:any;
   fecha:string="";
   hora: string="";
   equipo1:string="";
@@ -67,7 +67,7 @@ export class CreateBasquetMatchAdmPage implements OnInit {
 
   crearPartido(){
 
-    if(this.fecha!=''&&this.hora!=''&&this.equipo1!=''&&this.equipo2!=''&&this.etapa!=''&&this.disciplina!=''){
+    if(this.fecha!=''&&this.hora!=''&&this.equipo1!=''&&this.equipo2!=''&&this.etapa!=''){
 
 
 if(this.equipo1!=this.equipo2){
@@ -83,7 +83,7 @@ if(this.equipo1.charAt(0).toLowerCase() == '1'){
 }else{
   this.nivel='Tercero';
 }
-
+this.deporte=localStorage.getItem("deporte");
     this.email= localStorage.getItem('Email');
 this.nombreTorneo=localStorage.getItem('NombreTorneo');
     let data = {
@@ -94,7 +94,7 @@ this.nombreTorneo=localStorage.getItem('NombreTorneo');
       etapa: this.etapa,
       nivel: this.nivel,
       nombreTorneo: this.nombreTorneo,
-      disciplina: this.disciplina,
+      disciplina: this.deporte,
       email: this.email,
       ubi:this.ubi
     }

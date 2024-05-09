@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { LoadingController, ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
 import * as CryptoJS from 'crypto-js';
@@ -16,7 +16,7 @@ export class SignupPage implements OnInit {
   lastName: string = '';
   email: string = '';
 
-  constructor(private router: Router,public _apiService: ApiService,private http: HttpClient,private toastController: ToastController, private route: ActivatedRoute) { 
+  constructor(private loadingController: LoadingController, private router: Router,public _apiService: ApiService,private http: HttpClient,private toastController: ToastController, private route: ActivatedRoute) { 
   
   }
 
@@ -54,7 +54,16 @@ export class SignupPage implements OnInit {
 
   
 
-  addStudent(){
+  async addStudent(){
+
+    const loading = await this.loadingController.create({ // Creamos el loading
+      message: 'Redirigiendo...',
+      spinner: 'circles', // Puedes cambiar el tipo de spinner según tus preferencias
+      translucent: true,
+      cssClass: 'custom-loading' // Clase CSS personalizada para el loading
+    });
+    await loading.present();
+
     console.log(this.name,this.lastName,this.password,this.email);
  
    
@@ -114,11 +123,14 @@ this.presentToastBad("Ya existe un usuario con ese correo");
     if (!this.email.includes('.est') ) {
      
     this.router.navigate(['/input-area-adm']);
+    loading.dismiss();
+
     }else {
       this.router.navigate(['/input-class-adm']);
+      loading.dismiss();
+
     
     }
-        
       },(error: any)=>{ 
         console.log("ERROR ===", error);
       })
@@ -131,18 +143,25 @@ this.presentToastBad("Ya existe un usuario con ese correo");
  
 
   }else{
+    loading.dismiss();
     this.presentToastBad("El correo debe ser del dominio: uets.edu.ec");
   }
 
 }else{
+  loading.dismiss();
+
 this.presentToastBad("La contraseña debe ser mayor o igual a 8 caracteres");
 
 }
 }else{
+  loading.dismiss();
+
   this.presentToastBad("El nombre no puede contener numeros");
 }
 
 }else{
+  loading.dismiss();
+
   this.presentToastBad("Porfavor rellene todos los campos");
 }
 }

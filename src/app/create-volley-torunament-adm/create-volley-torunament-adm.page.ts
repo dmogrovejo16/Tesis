@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-import { ToastController } from '@ionic/angular';
+import { LoadingController, ToastController } from '@ionic/angular';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { LocalNotifications } from '@capacitor/local-notifications';
 
@@ -17,15 +17,21 @@ export class CreateVolleyTorunamentAdmPage implements OnInit {
   idAdmCreator: string = '40';
   id: string = localStorage.getItem("id")!;
 
-  constructor(private router: Router,public _apiService: ApiService,private toastController: ToastController, private route: ActivatedRoute) { }
+  constructor(private loadingController: LoadingController,private router: Router,public _apiService: ApiService,private toastController: ToastController, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
 
 
 
-  addTournament(){
-
+  async addTournament(){
+    const loading = await this.loadingController.create({ // Creamos el loading
+      message: 'Creando torneo...',
+      spinner: 'circles', // Puedes cambiar el tipo de spinner según tus preferencias
+      translucent: true,
+      cssClass: 'custom-loading' // Clase CSS personalizada para el loading
+    });
+    await loading.present(); 
 if(this.name!=''||this.fechIni!=''||this.fechFin!=''){
 
 
@@ -58,6 +64,7 @@ if(fechaInicio < fechaFin){
       this.fechFin='';
       this.idAdmCreator='';
       this.router.navigate(['/volley-adm']);
+      loading.dismiss(); 
       this.presentToast('Torneo creado exitosamente');
       this.ngOnInit2();
   },(error: any)=>{ 
@@ -65,11 +72,13 @@ if(fechaInicio < fechaFin){
   })
   
 }else{
+  loading.dismiss(); 
   this.presentToastBad('La fecha de inicio debe ser anterior a la fecha de finalización');
 
 }
 
 }else{
+  loading.dismiss(); 
   this.presentToastBad('Porfavor complete todos los campos');
 
 }

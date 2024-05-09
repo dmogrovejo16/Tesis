@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { LoadingController, ToastController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
 import * as CryptoJS from 'crypto-js';
@@ -12,7 +12,7 @@ import * as CryptoJS from 'crypto-js';
 })
 export class LoginPage implements OnInit {
   inputValue: string = '';
-  constructor(private router: Router,private http: HttpClient, public _apiService: ApiService,private toastController: ToastController)
+  constructor( private loadingController: LoadingController,private router: Router,private http: HttpClient, public _apiService: ApiService,private toastController: ToastController)
    {
 
     }
@@ -39,7 +39,17 @@ idEst:any;
 
   
   
-  iniciarSesion(){
+  async iniciarSesion(){
+
+    const loading = await this.loadingController.create({ // Creamos el loading
+      message: 'Iniciando sesión...',
+      spinner: 'circles', // Puedes cambiar el tipo de spinner según tus preferencias
+      translucent: true,
+      cssClass: 'custom-loading' // Clase CSS personalizada para el loading
+    });
+    await loading.present(); 
+
+
   this.hashedPassword = this.hashPassword(this.password);
 
   if(this.email!="" && this.password!=""){
@@ -59,7 +69,8 @@ idEst:any;
           localStorage.setItem("idUser",idEstudiante);
         } 
 
-   
+  
+
         this.idEst=res.find((estudiante: any) => estudiante.email === this.email).id;
         const nombre= res.find((estudiante: any) => estudiante.email === this.email).nombre;
         const apellido= res.find((estudiante: any) => estudiante.email === this.email).apellido;
@@ -107,6 +118,7 @@ idEst:any;
         this.presentToast('Datos incorrectos');
 
       }
+      loading.dismiss(); 
     },(error: any)=>{ 
       console.log("ERROR ===", error);
     })

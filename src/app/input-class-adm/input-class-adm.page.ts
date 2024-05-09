@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
-import { ToastController } from '@ionic/angular';
+import { LoadingController, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class InputClassAdmPage implements OnInit {
 curso:any;
 id:any;
-  constructor(private router: Router,private http: HttpClient, public _apiService: ApiService,private toastController: ToastController) { }
+  constructor(private loadingController: LoadingController,private router: Router,private http: HttpClient, public _apiService: ApiService,private toastController: ToastController) { }
 
   ngOnInit() {
   }
@@ -39,7 +39,15 @@ id:any;
     toast.present();
   }
 
-ingresarCurso(){
+  async ingresarCurso(){
+
+  const loading = await this.loadingController.create({ // Creamos el loading
+    message: 'Creando usuario...',
+    spinner: 'circles', // Puedes cambiar el tipo de spinner según tus preferencias
+    translucent: true,
+    cssClass: 'custom-loading' // Clase CSS personalizada para el loading
+  });
+  await loading.present(); 
 
   let data = {
     id: localStorage.getItem("id"),
@@ -50,6 +58,7 @@ ingresarCurso(){
   this._apiService.classStudent(data).subscribe((res:any)=>{
     this.presentToastGood('Registro exitoso');
     this.router.navigate(['/home-est']);
+    loading.dismiss(); 
 localStorage.setItem("curso", this.curso);
 
   },(error: any)=>{ 

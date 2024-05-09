@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
-import { ToastController } from '@ionic/angular';
+import { LoadingController, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-input-area-adm',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class InputAreaAdmPage implements OnInit {
   area:any;
   id:any;
-  constructor(private router: Router,private http: HttpClient, public _apiService: ApiService,private toastController: ToastController) { }
+  constructor(private loadingController: LoadingController, private router: Router,private http: HttpClient, public _apiService: ApiService,private toastController: ToastController) { }
 
   ngOnInit() {
   }
@@ -37,7 +37,15 @@ export class InputAreaAdmPage implements OnInit {
     toast.present();
   }
 
-  ingresarArea(){
+  async ingresarArea(){
+
+    const loading = await this.loadingController.create({ // Creamos el loading
+      message: 'Creando usuario...',
+      spinner: 'circles', // Puedes cambiar el tipo de spinner según tus preferencias
+      translucent: true,
+      cssClass: 'custom-loading' // Clase CSS personalizada para el loading
+    });
+    await loading.present(); 
 
     let data = {
       id: localStorage.getItem("id"),
@@ -48,6 +56,7 @@ export class InputAreaAdmPage implements OnInit {
     this._apiService.areaAdministrator(data).subscribe((res:any)=>{
       this.presentToastGood('Registro exitoso');
       this.router.navigate(['/home-adm']);
+      loading.dismiss(); 
       localStorage.setItem("area", this.area);
 
   
@@ -55,6 +64,7 @@ export class InputAreaAdmPage implements OnInit {
       console.log("ERROR ===", error);
     })
   }else{
+    loading.dismiss(); 
     this.presentToastBad('Porfavor rellene el campo');
   }
   }

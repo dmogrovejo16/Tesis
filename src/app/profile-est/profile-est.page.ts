@@ -16,7 +16,7 @@ idAdministrador:any;
   nombreCapitalizado: any = localStorage.getItem("Name");
   email: string| null = localStorage.getItem("Email");
   nombreCompleto:any;
-  apellido: string = localStorage.getItem("Last Name")!;
+  apellido: string = localStorage.getItem("lastName")!;
   apellidoCapitalizado: string = this.apellido.charAt(0).toUpperCase()  + this.apellido.slice(0, -1);
   constructor(private router: Router, private alertController: AlertController,public _apiService: ApiService, private toastController: ToastController) { }
 

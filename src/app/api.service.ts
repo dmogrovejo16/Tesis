@@ -8,116 +8,116 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ApiService {
   headers: HttpHeaders = new HttpHeaders;
 
-  constructor(public http: HttpClient) { 
+  constructor(public http: HttpClient) {
     this.headers.append("Accept", 'application/json');
-this.headers.append('Content-Type', 'application/json');
-this.headers.append('Access-Control-Allow-Origin', '*');
+    this.headers.append('Content-Type', 'application/json');
+    this.headers.append('Access-Control-Allow-Origin', '*');
 
   }
 
 
-  
-  addStudent(data: { email: any; name: any; lastName: any; password: any; }){
+
+  addStudent(data: { email: any; name: any; lastName: any; password: any; }) {
     return this.http.post('http://192.168.1.11/create.php/', data);
-      }
+  }
 
-      addMatch(data: { fecha: any; hora: any; equipo1: any; equipo2: any;etapa:any; nivel:any; nombreTorneo:any; disciplina:any; email:any}){
-        return this.http.post('http://192.168.1.11/createMatch.php/', data);
-          }
+  addMatch(data: { fecha: any; hora: any; equipo1: any; equipo2: any; etapa: any; nivel: any; nombreTorneo: any; disciplina: any; email: any }) {
+    return this.http.post('http://192.168.1.11/createMatch.php/', data);
+  }
 
-          resultMatch(data: { resEq1: any; resEq2: any; id:any;}){
-            return this.http.post('http://192.168.1.11/updateStudent.php/', data);
-              }
+  resultMatch(data: { resEq1: any; resEq2: any; id: any; }) {
+    return this.http.post('http://192.168.1.11/updateStudent.php/', data);
+  }
 
-              classStudent(data: { curso: any;  id:any;}){
-                return this.http.post('http://192.168.1.11/classStudent.php/', data);
-                  }
+  classStudent(data: { curso: any; id: any; }) {
+    return this.http.post('http://192.168.1.11/classStudent.php/', data);
+  }
 
-                  areaAdministrator(data: { area: any;  id:any;}){
-                    return this.http.post('http://192.168.1.11/areaAdministrator.php/', data);
-                      }
+  areaAdministrator(data: { area: any; id: any; }) {
+    return this.http.post('http://192.168.1.11/areaAdministrator.php/', data);
+  }
 
-      getStudents(){
-        return this.http.get('http://192.168.1.11/getStudents.php/');
-      }
+  getStudents() {
+    return this.http.get('http://192.168.1.11/getStudents.php/');
+  }
 
-      getAllMatches(){
-        return this.http.get('http://192.168.1.11/getAllMatches.php/');
-        
-
-      }
+  getAllMatches() {
+    return this.http.get('http://192.168.1.11/getAllMatches.php/');
 
 
-      getMatchesFirst(){
-        return this.http.get('http://192.168.1.11/getMatches_first.php/');
+  }
 
-      }
 
-      getMatchesSecond(){
-        return this.http.get('http://192.168.1.11/getMatches_second.php/');
+  getMatchesFirst() {
+    return this.http.get('http://192.168.1.11/getMatches_first.php/');
 
-      }
+  }
 
-      getMatchesThird(){
-        return this.http.get('http://192.168.1.11/getMatches_third.php/');
+  getMatchesSecond() {
+    return this.http.get('http://192.168.1.11/getMatches_second.php/');
 
-      }
+  }
 
-      getSingleStudent(data: { email:any; }){
-        return this.http.get('http://192.168.1.11/getSingleStudent.php/');
+  getMatchesThird() {
+    return this.http.get('http://192.168.1.11/getMatches_third.php/');
 
-      }
+  }
 
-      delete(email: string | null){
-        return this.http.delete('http://192.168.1.11/delete.php?email='+email);
-      }
+  getSingleStudent(data: { email: any; }) {
+    return this.http.get('http://192.168.1.11/getSingleStudent.php/');
 
-      deleteTournament(id: any){
-        return this.http.delete('http://192.168.1.11/deleteTournament.php?id='+id);
-      }
+  }
 
-      deleteMatch(id: any){
-        return this.http.delete('http://192.168.1.11/deleteMatch.php?id='+id);
-      }
-      
+  delete(email: string | null) {
+    return this.http.delete('http://192.168.1.11/delete.php?email=' + email);
+  }
 
-      addTournament(data: { name: string; fechIni: string; fechFin: string; idAdmCreator: string;  }){
-        return this.http.post('http://192.168.1.11/createTorunament.php/', data);
-      }
+  deleteTournament(id: any) {
+    return this.http.delete('http://192.168.1.11/deleteTournament.php?id=' + id);
+  }
 
-      addImagen(formData: FormData){
-        return this.http.post('http://192.168.1.11/createImagen.php/', formData);
-      }
+  deleteMatch(id: any) {
+    return this.http.delete('http://192.168.1.11/deleteMatch.php?id=' + id);
+  }
 
-      getTournaments(){
-        return this.http.get('http://192.168.1.11/getTournaments.php/');
-      }
 
-      getImagenes(){
-        return this.http.get('http://192.168.1.11/getImagenes.php/');
-      }
+  addTournament(data: { name: string; fechIni: string; fechFin: string; idAdmCreator: string; }) {
+    return this.http.post('http://192.168.1.11/createTorunament.php/', data);
+  }
 
-      getAlumno(){
-        return this.http.get('http://192.168.1.11/getAlumno.php/');
+  addImagen(formData: FormData) {
+    return this.http.post('http://192.168.1.11/createImagen.php/', formData);
+  }
 
-      }
-      getAlumnos(){
-        return this.http.get('http://192.168.1.11/getAlumnos.php/');
+  getTournaments() {
+    return this.http.get('http://192.168.1.11/getTournaments.php/');
+  }
 
-      }
+  getImagenes() {
+    return this.http.get('http://192.168.1.11/getImagenes.php/');
+  }
 
-      createEvent(data: { name: any; desc: any; fecha: any; lugar: any; }){
-        return this.http.post('http://192.168.1.11/createEvent.php/', data);
-      }
+  getAlumno() {
+    return this.http.get('http://192.168.1.11/getAlumno.php/');
 
-      getEvents(){
-        return this.http.get('http://192.168.1.11/getEvents.php/');
+  }
+  getAlumnos() {
+    return this.http.get('http://192.168.1.11/getAlumnos.php/');
 
-      }
+  }
 
-      getAdministradores(){
-        return this.http.get('http://192.168.1.11/getAdministradores.php/');
+  createEvent(data: { name: any; desc: any; fecha: any; lugar: any; }) {
+    return this.http.post('http://192.168.1.11/createEvent.php/', data);
+  }
 
-      }
+  getEvents() {
+    return this.http.get('http://192.168.1.11/getEvents.php/');
+
+  }
+
+  getAdministradores() {
+    return this.http.get('http://192.168.1.11/getAdministradores.php/');
+
+  }
 
 }

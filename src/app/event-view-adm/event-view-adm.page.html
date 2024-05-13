@@ -42,16 +42,34 @@
 <ion-label id="txt2">{{lugar}}</ion-label>
 </div>
 <hr>
+
 <div class="subcont3">
 
 <ion-label class="text">Fecha</ion-label>
 <ion-label class="txt">{{fecha}}</ion-label>
+
+
+
 </div>
 
 
 
+<ion-fab class="fab">
+  <ion-fab-button>
+    <ion-icon name="logo-facebook"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="end">
+    <ion-fab-button (click)="onLinkClick()">
+      <ion-icon name="link-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="onEyeClick()">
+      <ion-icon name="eye-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab> 
 
 </div>
+
 </div>
 
 

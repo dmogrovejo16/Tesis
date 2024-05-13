@@ -37,6 +37,10 @@ export class ApiService {
     return this.http.post('http://192.168.1.11/linkLive.php/', data);
   }
 
+  linkEvento(data: { link: any; id: any; }) {
+    return this.http.post('http://192.168.1.11/linkEvento.php/', data);
+  }
+
   areaAdministrator(data: { area: any; id: any; }) {
     return this.http.post('http://192.168.1.11/areaAdministrator.php/', data);
   }

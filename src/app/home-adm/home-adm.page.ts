@@ -122,8 +122,11 @@ this.apiService.getEvents().subscribe((res:any)=>{
   this.name=this.event.nombre;
   this.fecha=this.event.fecha;
   this.lugar=this.event.lugar;
+  console.log(this.event.linkLive);
   this.desc=this.event.descripcion;
   localStorage.setItem("lugarEvento",this.lugar);
+  localStorage.setItem("idEvento",this.event.id);
+  localStorage.setItem("linkEvento",this.event.linkLive);
   localStorage.setItem("fechaEvento",this.fecha);
   localStorage.setItem("nameEvento",this.name);
   localStorage.setItem("descEvento",this.desc);

@@ -42,7 +42,7 @@ idPartido:any;
   constructor(private el: ElementRef,private storageService:StorageService, private http: HttpClient, public _apiService: ApiService, private toastController: ToastController, public alertController:AlertController) { }
 
 async hay(link:any){
-if(link){
+if(link!=""&&(link.startsWith("http://")||link.startsWith("https://")) ){
   await Browser.open({ url: link });
 }else{
 this.presentToast("No hay un link para el partido seleccionado");
@@ -347,4 +347,5 @@ if(cancha.name==nombre){
          }
     
     }
+    
 }

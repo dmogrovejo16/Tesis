@@ -14,6 +14,8 @@
 <ion-list  [inset]="true" lines="inset">
   <ion-item *ngFor="let partido of partidos"   >
     <ion-grid >
+      <ion-row class="ion-align-items-center" id="live"> <ion-icon (click)="presentAlert3(partido.idPartido)" size="large" class="facebook" color="primary" name="logo-facebook"></ion-icon></ion-row>
+
       <ion-row class="ion-align-items-center" >
         <ion-col  size="3" >
           <ion-badge color="warning">{{partido.etapa}}</ion-badge>
@@ -59,6 +61,8 @@
         </ion-col>
       </ion-row>
       <ion-label class="torneo2">{{partido.nombreTorneo}}</ion-label>
+      <ion-button class="torneo" id="livee" (click)="hay(partido.linkLive)">Ver Live <ion-icon class="logo" name="logo-facebook"></ion-icon></ion-button>
+
 
     </ion-grid>
   </ion-item>

@@ -5,6 +5,7 @@ import { AlertController, IonicSafeString } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { StorageService } from '../storage.service';
 import { LocalNotifications } from '@capacitor/local-notifications';
+import { Browser } from '@capacitor/browser';
 
 @Component({
   selector: 'app-all-futbol-matches-adm',
@@ -22,6 +23,7 @@ export class AllFutbolMatchesAdmPage implements OnInit {
   minuto:any = this.fecha.getMinutes();
   horaCom:any=this.hora+":"+this.minuto+":00";
   Eq2: any;
+  idPartido:any;
   place:any;
   imagenes:any;
   fechaPartidos:any;
@@ -266,5 +268,68 @@ if(cancha.name==nombre){
          }
     
     }
-
+    async hay(link:any){
+      console.log(link);
+      if(link){
+        if(link.startsWith("http://")||link.startsWith("https://")){
+        await Browser.open({ url: link });
+      }
+      }else{
+      this.presentToast("No hay un link para el partido seleccionado");
+      }
+      }
+      async presentAlert3(id:any) {
+        this.idPartido=id;
+        console.log("id partido: "+this.idPartido);
+            const alert = await this.alertController.create({
+              header: 'Ingrese el link de la transimisión en vivo',
+              inputs: [
+                {
+                  name: 'texto',
+                  type: 'text',
+                  placeholder: 'Ingrese su texto aquí...'
+                }
+              ],
+              buttons: [
+                {
+                  text: 'Cancelar',
+                  role: 'cancel',
+                  cssClass: 'secondary',
+                  handler: () => {
+                    console.log('Confirmación cancelada');
+                  }
+                }, {
+                  text: 'Aceptar',
+                  handler: (data) => {
+                    if(data.texto){
+                    console.log('Texto ingresado:', data.texto);
+                    let data2 = {
+                      link: data.texto,
+                      id:this.idPartido
+                    }
+                    this._apiService.linkLive(data2).subscribe((res:any)=>{       
+        this.presentToastGood("Link ingresado con éxito");
+                       
+                },(error: any)=>{ 
+                  console.log("ERROR ===", error);
+                })
+              }else{
+                this.presentToastBad("Tiene que ingresar un link");
+              }
+              }
+                }
+              ]
+            });
+        
+            await alert.present();
+          }
+      async presentToast(message: string) {
+        const toast = await this.toastController.create({
+          message: message,
+          duration: 2000, 
+          position: 'bottom', 
+          color: 'warning', 
+        });
+        toast.present();
+      }
 }

@@ -4,6 +4,7 @@ import { ApiService } from '../api.service';
 import { AlertController, IonicSafeString, ToastController } from '@ionic/angular';
 import { LocalNotifications } from '@capacitor/local-notifications';
 import { StorageService } from '../storage.service';
+import { Browser } from '@capacitor/browser';
 
 @Component({
   selector: 'app-all-basquet-matches-est',
@@ -148,7 +149,25 @@ this.presentToastGood("El partido se elimino con éxito");
     return formattedDate;
   }
 
-
+  async hay(link:any){
+    if(link){
+      if(link.startsWith("http://")||link.startsWith("https://")){
+      await Browser.open({ url: link });
+    }
+    }else{
+    this.presentToast("No hay un link para el partido seleccionado");
+    }
+    }
+  
+    async presentToast(message: string) {
+      const toast = await this.toastController.create({
+        message: message,
+        duration: 2000, 
+        position: 'bottom', 
+        color: 'warning', 
+      });
+      toast.present();
+    }
   ngOnInit() {
 
     this.nombreTorneo = localStorage.getItem("NombreTorneo");

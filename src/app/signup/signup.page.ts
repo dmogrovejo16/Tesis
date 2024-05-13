@@ -57,7 +57,7 @@ export class SignupPage implements OnInit {
   async addStudent(){
 
     const loading = await this.loadingController.create({ // Creamos el loading
-      message: 'Redirigiendo...',
+      message: 'Verificando...',
       spinner: 'circles', // Puedes cambiar el tipo de spinner según tus preferencias
       translucent: true,
       cssClass: 'custom-loading' // Clase CSS personalizada para el loading
@@ -78,10 +78,14 @@ if(this.password.length>=8){
 
 
 if (this.email.includes('uets.edu.ec')&&this.email.includes('.')){
-
-
-
-
+fetch('https://api.hunter.io/v2/email-verifier?email='+this.email+'&api_key=d862975c55fe01b6983079800546915ce7978248')
+.then(response => response.json())
+.then(data => {
+  // Procesar la respuesta
+  console.log(data);
+  if (data.data.result == 'deliverable') {
+    // La dirección de correo electrónico es válida
+    console.log('La dirección de correo electrónico es válida.');
     let data = {
       name: this.name,
       lastName: this.lastName,
@@ -92,13 +96,13 @@ if (this.email.includes('uets.edu.ec')&&this.email.includes('.')){
     localStorage.setItem("Email",this.email); 
     localStorage.setItem("Name",this.name); 
     localStorage.setItem("lastName",this.lastName); 
-  
-
 
     this._apiService.getStudents().subscribe((res:any)=>{   
 
 
       if(res.some((item: { email: any; }) => item.email === this.email)){
+        loading.dismiss();
+
 this.presentToastBad("Ya existe un usuario con ese correo");
       }else{
 
@@ -141,6 +145,15 @@ this.presentToastBad("Ya existe un usuario con ese correo");
     })
 
  
+  } else {
+    loading.dismiss();
+    console.log('La dirección de correo electrónico no es válida.');
+    this.presentToastBad("El correo no existe");
+
+  }
+})
+
+
 
   }else{
     loading.dismiss();

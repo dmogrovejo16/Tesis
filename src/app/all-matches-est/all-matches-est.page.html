@@ -42,15 +42,17 @@
       </ion-row>
 
       <ion-row class="ion-align-items-center">
-        <ion-col style="height: 2rem;" size="12" class="ion-text-center">
+        <ion-col style="height: 2rem; margin-bottom: 1rem;" size="12" class="ion-text-center">
 
 
-          <ion-button color="primary" (click)="ubiPartido(partido.ubiPartido)"  shape="round">    <ion-badge color="primary" >{{partido.ubiPartido}} </ion-badge><ion-icon name="eye-outline"></ion-icon></ion-button>
+          <ion-button color="danger" (click)="ubiPartido(partido.ubiPartido)"  shape="round">    <ion-badge color="danger" >{{partido.ubiPartido}} </ion-badge><ion-icon name="eye-outline"></ion-icon></ion-button>
 
 
         </ion-col>
       </ion-row>
       <ion-label class="torneo2">{{partido.nombreTorneo}}</ion-label>
+      <ion-button class="torneo" id="livee" (click)="hay(partido.linkLive)">Ver Live <ion-icon class="logo" name="logo-facebook"></ion-icon></ion-button>
+
 
     </ion-grid>
   </ion-item>

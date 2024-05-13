@@ -4,6 +4,7 @@ import { ApiService } from '../api.service';
 import { LocalNotifications } from '@capacitor/local-notifications';
 import { AlertController, IonicSafeString, ToastController } from '@ionic/angular';
 import { StorageService } from '../storage.service';
+import { Browser } from '@capacitor/browser';
 
 @Component({
   selector: 'app-all-volley-matches-est',
@@ -120,7 +121,25 @@ equipo2:any;
           })
 
   }
-
+  async hay(link:any){
+    if(link){
+      if(link.startsWith("http://")||link.startsWith("https://")){
+      await Browser.open({ url: link });
+    }
+    }else{
+    this.presentToast("No hay un link para el partido seleccionado");
+    }
+    }
+  
+    async presentToast(message: string) {
+      const toast = await this.toastController.create({
+        message: message,
+        duration: 2000, 
+        position: 'bottom', 
+        color: 'warning', 
+      });
+      toast.present();
+    }
   enviarID(id: any, Eq1:any, Eq2:any){
     this.id=id;
     this.Eq1=Eq1;

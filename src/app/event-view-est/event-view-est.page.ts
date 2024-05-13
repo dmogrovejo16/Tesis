@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Browser } from '@capacitor/browser';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-event-view-est',
@@ -13,15 +15,34 @@ export class EventViewEstPage implements OnInit {
   desc:any;
   lugar:any;
   url:any;
-    constructor() {
+  link:any;
+    constructor(private toastController: ToastController) {
       this.url=localStorage.getItem("urlEvento")
       this.name=localStorage.getItem("nameEvento");
       this.fecha=localStorage.getItem("fechaEvento");
       this.lugar=localStorage.getItem("lugarEvento");
       this.desc=localStorage.getItem("descEvento");
+      this.link=localStorage.getItem("linkEvento");
+
      }
-  
-  
+
+     async presentToast(message: string) {
+      const toast = await this.toastController.create({
+        message: message,
+        duration: 2000, 
+        position: 'bottom', 
+        color: 'warning', 
+      });
+      toast.present();
+    }
+     async onEyeClick() {
+    
+      if(this.link){
+        await Browser.open({ url: this.link });
+      }else{
+      this.presentToast("No hay un link para el evento seleccionado");
+      }
+    }
      handleRefresh(event:any) {
       this.ngOnInit();
       setTimeout(() => {

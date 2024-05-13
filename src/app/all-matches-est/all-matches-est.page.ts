@@ -2,9 +2,10 @@ import { Component,ElementRef,  OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
 import { LocalNotifications } from '@capacitor/local-notifications';
-import { NotificationsService } from '../notifications.service';
 import { StorageService } from '../storage.service';
-import { AlertController, IonicSafeString } from '@ionic/angular';
+import { AlertController, IonicSafeString, ToastController } from '@ionic/angular';
+import { Browser } from '@capacitor/browser';
+
 @Component({
   selector: 'app-all-matches-est',
   templateUrl: './all-matches-est.page.html',
@@ -34,7 +35,7 @@ export class AllMatchesEstPage implements OnInit {
     minuto:any = this.fecha.getMinutes();
     
     horaCom:any=this.hora+":"+this.minuto+":00";
-  constructor(private storageService:StorageService, public alertController:AlertController,private el: ElementRef, private http: HttpClient, public _apiService: ApiService) { }
+  constructor(private toastController: ToastController,private storageService:StorageService, public alertController:AlertController,private el: ElementRef, private http: HttpClient, public _apiService: ApiService) { }
 
   async mostrarAlertaConImagen(ubi:any, link:any) {
     console.log("Este es el link a mostrar: "+link);
@@ -204,4 +205,26 @@ if(cancha.name==nombre){
          }
     
     }
+
+    
+async hay(link:any){
+  if(link){
+
+   if(link.startsWith("http://")||link.startsWith("https://")){
+      await Browser.open({ url: link });
+    }
+  }else{
+  this.presentToast("No hay un link para el partido seleccionado");
+  }
+  }
+
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000, 
+      position: 'bottom', 
+      color: 'warning', 
+    });
+    toast.present();
+  }
 }

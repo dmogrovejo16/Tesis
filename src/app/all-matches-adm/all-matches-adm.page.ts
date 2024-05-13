@@ -15,7 +15,8 @@ import { Browser } from '@capacitor/browser';
 export class AllMatchesAdmPage implements OnInit {
 
 
-  
+  alertButtons = ['Entendido'];
+
 linkUbi:any;
 place:any;
 color:any;
@@ -41,6 +42,16 @@ idPartido:any;
   horaCom:any=this.hora+":"+this.minuto+":00";
   constructor(private el: ElementRef,private storageService:StorageService, private http: HttpClient, public _apiService: ApiService, private toastController: ToastController, public alertController:AlertController) { }
 
+async torneoP(torneo:any){
+  const alert = await this.alertController.create({
+    header: torneo,
+    message: 'El partido pertence a este torneo',
+    buttons: ['Entendido']
+});
+
+await alert.present();
+}
+
 async hay(link:any){
 if(link!=""&&(link.startsWith("http://")||link.startsWith("https://")) ){
   await Browser.open({ url: link });
@@ -48,6 +59,8 @@ if(link!=""&&(link.startsWith("http://")||link.startsWith("https://")) ){
 this.presentToast("No hay un link para el partido seleccionado");
 }
 }
+
+
 
   async presentAlert3(id:any) {
 this.idPartido=id;

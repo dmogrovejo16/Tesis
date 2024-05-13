@@ -268,6 +268,17 @@ if(cancha.name==nombre){
          }
     
     }
+
+    async torneoP(torneo:any){
+      const alert = await this.alertController.create({
+        header: torneo,
+        message: 'El partido pertence a este torneo',
+        buttons: ['Entendido']
+    });
+    
+    await alert.present();
+    }
+
     async hay(link:any){
       console.log(link);
       if(link){

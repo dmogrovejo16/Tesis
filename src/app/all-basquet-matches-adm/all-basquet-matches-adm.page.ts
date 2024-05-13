@@ -195,6 +195,16 @@ this.presentToastGood("El partido se elimino con éxito");
     });
   }
 
+  async torneoP(torneo:any){
+    const alert = await this.alertController.create({
+      header: torneo,
+      message: 'El partido pertence a este torneo',
+      buttons: ['Entendido']
+  });
+  
+  await alert.present();
+  }
+
   async hay(link:any){
     if(link){
       if(link.startsWith("http://")||link.startsWith("https://")){

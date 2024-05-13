@@ -17,7 +17,7 @@
       <ion-row class="ion-align-items-center" id="live"> <ion-icon (click)="presentAlert3(partido.idPartido)" size="large" class="facebook" color="primary" name="logo-facebook"></ion-icon></ion-row>
 
       <ion-row class="ion-align-items-center" style="margin-bottom: 1rem;">
-        <ion-col  size="3">
+        <ion-col  size="3" class="info">
           <ion-badge color="warning">{{partido.etapa}}</ion-badge>
           
         </ion-col>
@@ -43,28 +43,36 @@
       </ion-row>
 
       <ion-row class="ion-align-items-center">
-        <ion-col style="height: 2rem;" size="12" class="ion-text-center">
+        <ion-col style="height: 5rem;" size="12" class="ion-text-center">
 
 
-          <ion-button color="primary" (click)="ubiPartido(partido.ubiPartido)"  shape="round">    <ion-badge color="primary" >{{partido.ubiPartido}} </ion-badge><ion-icon name="eye-outline"></ion-icon></ion-button>
+          <ion-fab class="fab">
+            <ion-fab-button color="warning">
+              <ion-icon name="construct-outline"></ion-icon>           
+             </ion-fab-button>
+            <ion-fab-list side="start">
+              <ion-fab-button color="primary" (click)="hay(partido.linkLive)">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-button color="danger" (click)="mostrarAlerta(partido.idPartido)">
+                <ion-icon name="trash-outline"></ion-icon>
+              </ion-fab-button>
+            </ion-fab-list>
+            <ion-fab-list side="end">
 
-
+              <ion-fab-button color="success" (click)="ubiPartido(partido.ubiPartido)">
+                <ion-icon name="location-outline"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-button color="light" (click)="torneoP(partido.nombreTorneo)">
+                <ion-icon name="trophy-outline"></ion-icon>
+              </ion-fab-button>
+             
+            </ion-fab-list>
+          </ion-fab> 
+           
         </ion-col>
       </ion-row>
       
-      <ion-row class="ion-align-items-center">
-        <ion-col style="height: 2.5rem;" size="12" class="ion-text-center">
-
-        
-            <ion-button shape="round" color="danger"  (click)="mostrarAlerta(partido.idPartido)">Eliminar partido</ion-button>
-           
-        
-        </ion-col>
-      </ion-row>
-      <ion-label class="torneo2">{{partido.nombreTorneo}}</ion-label>
-      <ion-button class="torneo" id="livee" (click)="hay(partido.linkLive)">Ver Live <ion-icon class="logo" name="logo-facebook"></ion-icon></ion-button>
-
-
     </ion-grid>
   </ion-item>
 

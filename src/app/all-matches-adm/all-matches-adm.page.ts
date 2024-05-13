@@ -5,6 +5,7 @@ import { LocalNotifications } from '@capacitor/local-notifications';
 import { AlertController, IonicSafeString } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { StorageService } from '../storage.service';
+import { Browser } from '@capacitor/browser';
 
 @Component({
   selector: 'app-all-matches-adm',
@@ -12,6 +13,9 @@ import { StorageService } from '../storage.service';
   styleUrls: ['./all-matches-adm.page.scss'],
 })
 export class AllMatchesAdmPage implements OnInit {
+
+
+  
 linkUbi:any;
 place:any;
 color:any;
@@ -21,7 +25,7 @@ fechaPartidos:any;
 horaPartidos:any;
 equipo1:any;
 equipo2:any;
-
+idPartido:any;
   nombreTorneo:any;
   id: any;
   Eq1: any;
@@ -36,6 +40,61 @@ equipo2:any;
   
   horaCom:any=this.hora+":"+this.minuto+":00";
   constructor(private el: ElementRef,private storageService:StorageService, private http: HttpClient, public _apiService: ApiService, private toastController: ToastController, public alertController:AlertController) { }
+
+async hay(link:any){
+if(link){
+  await Browser.open({ url: link });
+}else{
+this.presentToast("No hay un link para el partido seleccionado");
+}
+}
+
+  async presentAlert3(id:any) {
+this.idPartido=id;
+console.log("id partido: "+this.idPartido);
+    const alert = await this.alertController.create({
+      header: 'Ingrese el link de la transimisión en vivo',
+      inputs: [
+        {
+          name: 'texto',
+          type: 'text',
+          placeholder: 'Ingrese su texto aquí...'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Confirmación cancelada');
+          }
+        }, {
+          text: 'Aceptar',
+          handler: (data) => {
+            if(data.texto){
+            console.log('Texto ingresado:', data.texto);
+            let data2 = {
+              link: data.texto,
+              id:this.idPartido
+            }
+            this._apiService.linkLive(data2).subscribe((res:any)=>{       
+this.presentToastGood("Link ingresado con éxito");
+               
+        },(error: any)=>{ 
+          console.log("ERROR ===", error);
+        })
+      }else{
+        this.presentToastBad("Tiene que ingresar un link");
+      }
+      }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
 
   async mostrarAlertaConImagen(ubi:any, link:any) {
     console.log("Este es el link a mostrar: "+link);
@@ -93,6 +152,16 @@ this.presentToastGood("El partido se elimino con éxito");
       duration: 2000, 
       position: 'bottom', 
       color: 'success', 
+    });
+    toast.present();
+  }
+
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000, 
+      position: 'bottom', 
+      color: 'warning', 
     });
     toast.present();
   }

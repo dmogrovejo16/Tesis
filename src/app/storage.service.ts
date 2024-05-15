@@ -41,5 +41,18 @@ async getAllImageUrls(path: any): Promise<{ name: string, url: string }[]> {
   return imagesInfo;
 }
 
-
+async eliminar(nombre:any){
+  const fileRef = this.storage.ref('Productos/'+nombre);
+console.log(fileRef);
+  fileRef.delete().toPromise()
+    .then(() => {
+      console.log(`Archivo ${nombre} eliminado correctamente.`);
+    })
+    .catch((error) => {
+      console.error(`Error al eliminar el archivo ${nombre}:`, error);
+    });
 }
+ 
+}
+
+

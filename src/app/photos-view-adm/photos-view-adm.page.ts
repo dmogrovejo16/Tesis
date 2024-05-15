@@ -12,14 +12,29 @@ import { StorageService } from '../storage.service';
 export class PhotosViewAdmPage implements OnInit {
   imagenes:any;
 
-  constructor(private storageService: StorageService) {
+  constructor(private storageService: StorageService, private toastController: ToastController,) {
 
-    this.obtenerEnlacesDeImagenes();
+
 
 
    }
 
+   eliminar(nombre:any){
+    this.storageService.eliminar(nombre);
+    this.presentToastGood('Memoria eliminada correctamente');
+   }
   ngOnInit() {
+    this.obtenerEnlacesDeImagenes();
+  }
+
+  async presentToastGood(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000, 
+      position: 'bottom', 
+      color: 'success', 
+    });
+    toast.present();
   }
 
   handleRefresh(event:any) {

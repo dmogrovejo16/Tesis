@@ -1,5 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Noto+Sans+Mro&display=swap');
 
+
+ion-card {
+  font-family: 'Noto Sans Mro', sans-serif;
+}
+
+.memorias{
+  width: auto;
+}
+
+.mem{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items:flex-end;
+  flex-direction: row;
+}
+
+ion-card-header {
+  font-family: 'Madimi One', sans-serif;
+}
+ion-content{
+
+    --ion-background-color:#0485ca;
+  }
+
+  .header{
+    margin: 1rem;
+    
+  }
+
+  .content{
+    margin: 1rem;
+  }
+
+  .title{
+    text-align: center;
+  }
+
+@media (max-width: 704px) {
 ion-card {
   font-family: 'Noto Sans Mro', sans-serif;
 }
@@ -24,3 +63,4 @@ ion-content{
   .title{
     text-align: center;
   }
+}

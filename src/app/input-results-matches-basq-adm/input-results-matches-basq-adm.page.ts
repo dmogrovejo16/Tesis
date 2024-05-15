@@ -31,6 +31,9 @@ export class InputResultsMatchesBasqAdmPage implements OnInit {
   goBack() {
     this.navCtrl.back();
   }
+
+
+
 resultMatch(){
 
   this.id=localStorage.getItem("idPartido");
@@ -39,7 +42,6 @@ resultMatch(){
 
 
   if(this.resEq1>=0&&this.resEq2>=0){
-
   let data = {
     resEq1: this.resEq1,
     resEq2: this.resEq2,

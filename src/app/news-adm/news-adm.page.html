@@ -9,8 +9,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-card *ngFor="let video of posts" color="warning" (click)="openVideo(video.id.videoId)">
+<ion-content [fullscreen]="true" class="mem">
+  <ion-card *ngFor="let video of posts" class="memorias" color="warning" (click)="openVideo(video.id.videoId)">
     <ion-card-header class="header">
       <img class="content" [src]="video.snippet.thumbnails.default.url" alt="Video Thumbnail">
       <ion-card-title class="title">{{ video.snippet.title }}</ion-card-title>

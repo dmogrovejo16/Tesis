@@ -1,3 +1,154 @@
+
+.card {
+  position: relative;
+  max-width: 30%;
+  display: inline-block;
+}
+
+#volley{
+  margin-bottom: 2rem;
+}
+
+ion-content{
+
+  --ion-background-color:#0485ca;
+}
+.profff{
+  margin-right: 0.5rem;
+}
+
+.cont{
+  text-align: center;
+  width: 100%;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title{
+  width: 60%;
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+
+}
+
+.subsub{
+  display: flex;
+  flex-direction: row;
+}
+
+.back{
+  position: absolute;
+  rotate: 180deg;
+  transform: scaleX(2); /* Puedes ajustar el valor según sea necesario */
+  margin-top: -40%;
+  z-index: -1;
+  width: 200%;
+}
+
+.btneli{
+  height: 2rem;
+  align-self: center;
+}
+
+.nameE{
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+
+.container {
+  padding: 20px;
+  width: 80%;
+  border-radius: 5rem;
+  overflow: hidden; 
+  display: flex; 
+  align-items: center;
+}
+
+.image {
+  width: 100px; /* Ancho de la imagen */
+  height: 100px; /* Alto de la imagen */
+  margin-right: 20px; /* Espacio entre la imagen y el contenido */
+}
+
+
+.logo{
+  width: 35%;
+  margin-top: 1.5rem;
+}
+
+.cab{
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-prof{
+  width: 10%;
+  background-color: white;
+}
+
+.cards{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: auto;
+  gap: 2rem;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1.5rem;
+}
+
+.img-btn {
+  position: relative;
+  display: block;
+  padding: 0;
+  border: none;
+  background: none;
+  color: aqua;
+}
+
+.img-btn img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+.text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.8); /* Cambiado a rgba(0, 0, 0, 0.8) para una opacidad del 80% */
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+@media (max-width: 704px) {
+  /* … */
+
+
 .card {
   position: relative;
   max-width: 80%;
@@ -143,4 +294,5 @@ ion-content{
   color: white;
   padding: 10px;
   text-align: center;
+}
 }

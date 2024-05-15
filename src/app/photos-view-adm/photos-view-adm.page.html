@@ -15,7 +15,9 @@
     <img alt="Memoria"  [src]="imagen.url"/>
     <ion-card-header>
       <ion-card-title class="ion-text-center">{{imagen.name}}</ion-card-title>
+    
     </ion-card-header>
+    <ion-button color="danger" shape="round" class="delete" (click)="eliminar(imagen.name)"><ion-icon name="trash-outline"></ion-icon></ion-button>
   </ion-card>
 
   <ion-button color="warning" routerLink="/subir-imagen-adm" shape="round" ><ion-icon size="large" name="add-circle-outline"></ion-icon></ion-button>

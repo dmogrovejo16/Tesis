@@ -147,7 +147,6 @@ this.presentToastBad("Ya existe un usuario con ese correo");
  
   } else {
     loading.dismiss();
-    console.log('La dirección de correo electrónico no es válida.');
     this.presentToastBad("El correo no existe");
 
   }

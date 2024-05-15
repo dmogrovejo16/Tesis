@@ -32,7 +32,7 @@
       </div>
       <div class="tour" *ngFor="let torneo of torneos">
 
-        <ion-button (click)="obtenerNombre(torneo.nombreTorneo)" routerLink="/levels-tournaments-fut-adm"
+        <ion-button (click)="obtenerNombre(torneo.nombreTorneo, torneo.idTorneo)" routerLink="/levels-tournaments-fut-adm"
           color="success" name="nombreTorneo" [(ngModel)]="nombreTorneo" class="torneo" shape="round">
           <div class="torneos_one">
             <div class="txt" id="nombreTor">{{torneo.nombreTorneo}}</div>

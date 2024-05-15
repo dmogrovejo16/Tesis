@@ -86,8 +86,11 @@ this.deporte=localStorage.getItem("deporte");
 
     this.email= localStorage.getItem('Email');
 this.nombreTorneo=localStorage.getItem('NombreTorneo');
+const idTorneo = localStorage.getItem('idTorneo');
+console.log(idTorneo);
     let data = {
       fecha: this.fecha,
+      id:idTorneo,
       hora: this.hora,
       equipo1: this.equipo1,
       equipo2: this.equipo2,

@@ -21,7 +21,7 @@ export class ApiService {
     return this.http.post('http://192.168.1.11/create.php/', data);
   }
 
-  addMatch(data: { fecha: any; hora: any; equipo1: any; equipo2: any; etapa: any; nivel: any; nombreTorneo: any; disciplina: any; email: any }) {
+  addMatch(data: { fecha: any;id:any; hora: any; equipo1: any; equipo2: any; etapa: any; nivel: any; nombreTorneo: any; disciplina: any; email: any }) {
     return this.http.post('http://192.168.1.11/createMatch.php/', data);
   }
 

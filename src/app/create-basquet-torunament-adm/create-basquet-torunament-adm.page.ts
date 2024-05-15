@@ -11,6 +11,7 @@ import { StorageService } from '../storage.service';
 })
 export class CreateBasquetTorunamentAdmPage implements OnInit {
   name: string = '';
+  nombre:any;
   fechIni: string = '';
   fechFin: string = '';
   idAdmCreator: string = '40';
@@ -18,7 +19,7 @@ export class CreateBasquetTorunamentAdmPage implements OnInit {
   constructor(private loadingController: LoadingController,private router: Router,public _apiService: ApiService,private toastController: ToastController, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    
+    this.nombre+localStorage.getItem("Name");
   }
 
 
@@ -109,7 +110,7 @@ export class CreateBasquetTorunamentAdmPage implements OnInit {
       await LocalNotifications.schedule({//Elaboracion del objeto notificacion
         notifications: [
           {
-            title: "¡Un nuevo torneo ha empezado!",
+            title: "¡"+this.nombre+", un nuevo torneo ha empezado!",
             body: "Entra a la aplicacion para no perderte ninguno de los partidos",
             id: 1
           }

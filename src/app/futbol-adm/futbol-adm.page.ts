@@ -170,9 +170,10 @@ this.ngOnInit2();
     }, 1500);
   }
 
-obtenerNombre(nombreT:any){
+obtenerNombre(nombreT:any, id:any){
   this.nombreTorneo=nombreT;
   localStorage.setItem("NombreTorneo", this.nombreTorneo);
+  localStorage.setItem("idTorneo", id);
 
 
 }

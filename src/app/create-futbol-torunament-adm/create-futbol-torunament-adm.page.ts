@@ -10,7 +10,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
   styleUrls: ['./create-futbol-torunament-adm.page.scss'],
 })
 export class CreateFutbolTorunamentAdmPage implements OnInit {
-
+nombre:any;
   name: string = '';
   fechIni: string = '';
   fechFin: string = '';
@@ -20,6 +20,7 @@ export class CreateFutbolTorunamentAdmPage implements OnInit {
   constructor(private loadingController: LoadingController,private router: Router,public _apiService: ApiService,private toastController: ToastController, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.nombre=localStorage.getItem("Name");
   }
 
 
@@ -111,7 +112,7 @@ async ngOnInit2() {
   await LocalNotifications.schedule({//Elaboracion del objeto notificacion
     notifications: [
       {
-        title: "¡Un nuevo torneo ha empezado!",
+        title: "¡"+this.nombre+", un nuevo torneo ha empezado!",
         body: "Entra a la aplicacion para no perderte ninguno de los partidos",
         id: 1
       }

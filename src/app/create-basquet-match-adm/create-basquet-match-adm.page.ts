@@ -85,10 +85,12 @@ if(this.equipo1.charAt(0).toLowerCase() == '1'){
 }
 this.deporte=localStorage.getItem("deporte");
     this.email= localStorage.getItem('Email');
+    const idTorneo=localStorage.getItem('idTorneo');
 this.nombreTorneo=localStorage.getItem('NombreTorneo');
     let data = {
       fecha: this.fecha,
       hora: this.hora,
+      id:idTorneo,
       equipo1: this.equipo1,
       equipo2: this.equipo2,
       etapa: this.etapa,

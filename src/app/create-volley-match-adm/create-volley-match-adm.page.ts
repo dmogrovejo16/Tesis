@@ -83,11 +83,12 @@ if(this.equipo1.charAt(0).toLowerCase() == '1'){
   this.nivel='Tercero';
 }
 this.deporte=localStorage.getItem("deporte");
-
+const idTorneo = localStorage.getItem('idTorneo');
     this.email= localStorage.getItem('Email');
 this.nombreTorneo=localStorage.getItem('NombreTorneo');
     let data = {
       fecha: this.fecha,
+      id:idTorneo,
       hora: this.hora,
       equipo1: this.equipo1,
       equipo2: this.equipo2,

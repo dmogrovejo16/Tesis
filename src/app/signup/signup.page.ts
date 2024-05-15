@@ -81,10 +81,8 @@ if (this.email.includes('uets.edu.ec')&&this.email.includes('.')){
 fetch('https://api.hunter.io/v2/email-verifier?email='+this.email+'&api_key=d862975c55fe01b6983079800546915ce7978248')
 .then(response => response.json())
 .then(data => {
-  // Procesar la respuesta
   console.log(data);
   if (data.data.result == 'deliverable') {
-    // La dirección de correo electrónico es válida
     console.log('La dirección de correo electrónico es válida.');
     let data = {
       name: this.name,

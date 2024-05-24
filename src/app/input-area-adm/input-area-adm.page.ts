@@ -39,11 +39,11 @@ export class InputAreaAdmPage implements OnInit {
 
   async ingresarArea(){
 
-    const loading = await this.loadingController.create({ // Creamos el loading
+    const loading = await this.loadingController.create({ 
       message: 'Creando usuario...',
-      spinner: 'circles', // Puedes cambiar el tipo de spinner según tus preferencias
+      spinner: 'circles', 
       translucent: true,
-      cssClass: 'custom-loading' // Clase CSS personalizada para el loading
+      cssClass: 'custom-loading' 
     });
     await loading.present(); 
 
@@ -61,6 +61,8 @@ export class InputAreaAdmPage implements OnInit {
 
   
     },(error: any)=>{ 
+      loading.dismiss(); 
+
       console.log("ERROR ===", error);
     })
   }else{

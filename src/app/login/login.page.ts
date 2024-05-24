@@ -79,6 +79,8 @@ idEst:any;
          localStorage.setItem("CursoEstudiante", this.cursoEst.curso);
 
         },(error: any)=>{ 
+          loading.dismiss(); 
+
           console.log("ERROR ===", error);
         })
 
@@ -110,10 +112,15 @@ idEst:any;
       } else if(res.some((item: { email: any; }) => item.email === this.email) && !res.some((item: { contrasena: any; }) => item.contrasena === this.password)){
        console.log( res.map((item: { constrasena: any; }) => item.constrasena));
         this.presentToast('Contraseña incorrecta');
+        loading.dismiss(); 
+
       }else if (!res.some((item: { email: any; }) => item.email === this.email)){
         this.presentToast('El usuario no existe');
+        loading.dismiss(); 
+
       }else{
         console.log( res.map((item: { contrasena: any; }) => item.contrasena));
+        loading.dismiss(); 
 
         this.presentToast('Datos incorrectos');
 
@@ -121,11 +128,15 @@ idEst:any;
       loading.dismiss(); 
     },(error: any)=>{ 
       console.log("ERROR ===", error);
+      loading.dismiss(); 
+
     })
 
   
     }else{
       this.presentToast("Rellene todos los campos porfavor");
+      loading.dismiss(); 
+
     }
   
   }

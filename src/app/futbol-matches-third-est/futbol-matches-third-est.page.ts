@@ -32,7 +32,7 @@ export class FutbolMatchesThirdEstPage implements OnInit {
 
     this._apiService.getMatchesThird().subscribe((res:any)=>{
       console.log(res);
-      this.partidos = res.filter((partido: any) => partido.nombreTorneo == this.nombreTorneo && partido.disciplina == "Futbol");
+      this.partidos = res.filter((partido: any) => partido.disciplina == "Futbol");
     },(error: any)=>{ 
             console.log("ERROR ===", error);
           })

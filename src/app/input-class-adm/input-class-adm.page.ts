@@ -62,12 +62,16 @@ id:any;
 localStorage.setItem("curso", this.curso);
 
   },(error: any)=>{ 
+    loading.dismiss(); 
+    this.presentToastBad('Porfavor siga el formato solicitado');
     console.log("ERROR ===", error);
   })
 }else if (this.curso!=null && this.curso.length>3){
+  loading.dismiss(); 
   this.presentToastBad('Porfavor siga el formato solicitado');
 
 }else{
+  loading.dismiss(); 
   this.presentToastBad('Porfavor rellene el campo');
 }
 }

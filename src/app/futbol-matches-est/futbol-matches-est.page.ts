@@ -120,7 +120,9 @@ if(cancha.name==nombre){
 console.log(this.nombreTorneo);
     this._apiService.getMatchesFirst().subscribe((res:any)=>{
       console.log(res);
-      this.partidos = res.filter((partido: any) => partido.nombreTorneo == this.nombreTorneo && partido.disciplina == "Futbol");
+      this.partidos = res.filter((partido: any) =>  partido.disciplina == "Futbol");
+      console.log(this.partidos);
+
     },(error: any)=>{ 
             console.log("ERROR ===", error);
           })

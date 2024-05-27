@@ -52,6 +52,15 @@ async torneoP(torneo:any){
 await alert.present();
 }
 
+handleInput(event:any) {
+  const query = event.target.value;
+  this._apiService.getAllMatches().subscribe((res:any)=>{
+  this.partidos = res.filter((partido: any) => partido.equipo1 == query || partido.equipo2==query);
+},(error: any)=>{ 
+  console.log("ERROR ===", error);
+})
+}
+
 async hay(link:any){
 if(link!=""&&(link.startsWith("http://")||link.startsWith("https://")) ){
   await Browser.open({ url: link });

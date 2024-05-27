@@ -6,6 +6,8 @@
   <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
+  <ion-searchbar [debounce]="1000" (ionInput)="handleInput($event)" placeholder="Busca por curso"></ion-searchbar>
+
   <div class="nametour">
     <ion-button routerLink="/home-adm" slot="start" color="primary" class="torneo" shape="round"> <ion-icon size="large" name="arrow-back-outline"></ion-icon></ion-button>
   <h2 class="torname">Partidos UETS</h2>
